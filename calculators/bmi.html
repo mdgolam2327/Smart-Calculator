@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        BMI Calculator - Check Your Body Mass Index | SmartCalc Hub
+    </title>
+
+    <meta name="description"
+    content="Calculate your BMI score, healthy weight range, BMI Prime and body mass category using our free BMI Calculator.">
+
+    <meta name="keywords"
+    content="BMI Calculator, Body Mass Index Calculator, Health Calculator, Weight Calculator">
+
+    <meta property="og:title"
+    content="BMI Calculator | SmartCalc Hub">
+
+    <meta property="og:description"
+    content="Calculate BMI, Healthy Weight Range, BMI Prime and Health Insights instantly.">
+
+    <meta property="og:type"
+    content="website">
+
+    <meta property="og:url"
+    content="https://smartcalc-hub.github.io/smartcalc-hub/calculators/bmi.html">
+
+    <meta property="og:image"
+    content="https://smartcalc-hub.github.io/smartcalc-hub/images/og-image.png">
+
+    <link rel="canonical" href="https://smartcalc-hub.github.io/smartcalc-hub/calculators/bmi.html">
+
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="stylesheet" href="../css/bmi.css">
+
+    <script type="application/ld+json"> {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                    {
+                "@type": "Question",
+                "name": "What is a healthy BMI range?",
+                "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For most adults, a BMI between 18.5 and 24.9 is considered healthy according to WHO. For Asian adults, the healthy range is 18.5 to 22.9. However, BMI is just a screening tool and doesn't directly measure body fat."
+                }
+            },
+        
+        {
+            "@type": "Question",
+                "name": "Is BMI accurate for everyone?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. BMI does not account for muscle mass, bone density, age, sex, or ethnicity. Athletes, bodybuilders, pregnant women, and elderly people may get misleading results. Always consult a doctor for a complete health assessment."
+                }
+        }, 
+        
+        {
+            "@type": "Question",
+            "name": "Why is my BMI high but I don't look fat?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You might have high muscle mass. Muscle is denser than fat, so muscular people often have a high BMI despite low body fat. This is why BMI is not used alone to diagnose obesity."
+            }
+        },
+
+           {
+                "@type": "Question",
+                "name": "What is the difference between BMI and Body Fat Percentage?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "BMI uses only height and weight to estimate weight category. Body Fat Percentage measures the actual amount of fat in your body using tools like calipers or DEXA scans. Body Fat % is more accurate for fitness tracking."
+                }
+            },
+        
+                {
+                   "@type": "Question",
+                    "name": "Can I use this calculator for my child or teenager?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. BMI for children and teens aged 2-18 uses age and gender-specific percentiles, not the adult chart. Please consult a pediatrician for accurate assessment of children."
+                    }
+                },
+        
+                {
+                    "@type": "Question",
+                    "name": "How can I lower my BMI safely?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Create a calorie deficit by eating 300-500 fewer calories per day, exercise 150 minutes per week, eat more protein to maintain muscle, and get 7-9 hours of sleep. Always consult a healthcare provider before starting any weight loss plan."
+                    }
+
+                }
+
+        ]
+
+    }
+    </script>
+
+    <link rel="stylesheet" href="../css/header.css">
+
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <div class="container">
+
+        <h1>🧮 SmartCalc Hub</h1>
+        <p>Free Online Calculators for Everyone</p>
+        <p>_________________________________</p>
+        <br><br>
+        
+        <h1>BMI Calculator</h1>
+        
+        <p class="tagline">
+            Calculate your Body Mass Index and discover your healthy weight range.
+        </p>
+        
+        <!-- Input Section -->
+         
+        <div class="bmi-form">
+            
+            <input
+            type="number"
+            id="age"
+            placeholder="Enter Age"
+            min="1">
+            
+            <select id="gender">
+                
+                <option value="">
+                    Select Gender
+                </option>
+            
+                <option value="male">
+                    Male
+                </option>
+            
+                <option value="female">
+                    Female
+                </option>
+        
+            </select>
+            
+            <input
+            type="number"
+            id="weight"
+            placeholder="Weight (kg)"
+            step="0.1">
+        
+            <input
+            type="number"
+            id="height"
+            placeholder="Height (cm)"
+            step="0.1">
+            
+            <p class="input-hint">
+                Example: 1 ft ≈ 30.48 cm & 12 In = 1 ft
+            </p>
+            
+            <button class="calc-btn" onclick="calculateBMI()">
+                <span>🧮</span>
+                <span>Calculate BMI</span>
+            </button>
+        </div>
+        
+        <!-- Gauge Section -->
+         
+        <div class="bmi-gauge-card">
+            
+            <h2>Your BMI Gauge</h2>
+            
+            <svg class="bmi-gauge"
+            viewBox="0 0 300 180">
+            
+                <path
+                d="M30 150 A120 120 0 0 1 90 45"
+                stroke="#3b82f6"
+                stroke-width="20"
+                fill="none" />
+        
+                <path
+                d="M90 45 A120 120 0 0 1 150 30"
+                stroke="#22c55e"
+                stroke-width="20"
+                fill="none" />
+
+                <path
+                d="M150 30 A120 120 0 0 1 210 45"
+                stroke="#f59e0b"
+                stroke-width="20"
+                fill="none" />
+
+                <path
+                d="M210 45 A120 120 0 0 1 270 150"
+                stroke="#ef4444"
+                stroke-width="20"
+                fill="none" />
+        
+                <line
+                id="gaugeNeedle"
+                x1="150"
+                y1="150"
+                x2="150"
+                y2="55"
+                stroke="#111"
+                stroke-width="5"
+                stroke-linecap="round" />
+        
+                <circle
+                cx="150"
+                cy="150"
+                r="10"
+                fill="#111" />
+    
+            </svg>
+        
+        </div>
+
+        <div class="gauge-labels">
+        
+            <span>Underweight</span>
+            <span>Normal</span>
+            <span>Overweight</span>
+            <span>Obese</span>
+    
+        </div>
+
+    </div>
+
+    <!-- Result Card -->
+
+    <div
+    id="resultCard"
+    class="bmi-result-card">
+    
+        <h2>Your BMI Result</h2>
+    
+        <div
+            id="bmiScore"
+            class="bmi-score">
+        </div>
+    
+        <div
+        id="bmiCategory"
+        class="bmi-category">
+    
+            Not Calculated
+        
+        </div>
+
+    </div>
+
+    <div
+        id="result"
+        style="display:none;">
+    </div>
+
+    <!-- Detailed Results -->
+
+    <div class="info-card">
+    
+        <h2>Detailed Analysis</h2>
+        
+        <div id="healthyWeight">
+            
+            Healthy Weight Range:
+            --
+
+        </div>
+    
+        <br>
+
+        <div id="bmiPrime">
+        
+            BMI Prime:
+            --
+
+        </div>
+
+        <br>
+
+        <div id="ponderalIndex">
+        
+            Ponderal Index:
+            --
+
+        </div>
+
+    </div>
+
+    <div id="actionButtons" class="action-buttons">
+
+        <button
+            class="copy-btn"
+            onclick="copyResult()">
+
+            📋 Copy Result
+
+        </button>
+
+        <button
+            class="share-btn"
+            onclick="shareResult()">
+
+           📤 Share Result
+
+        </button>
+
+        <button
+            class="pdf-btn"
+            onclick="downloadPDF()">
+
+            📄 Download PDF
+
+        </button>
+
+    </div>
+
+    <!-- Personalized Tips -->
+
+    <div id="healthTips"
+    class="info-card">
+    
+        <h2>Health Recommendations</h2>
+    
+        <p>
+            Calculate your BMI to receive personalized recommendations.
+        </p>
+
+    </div>
+
+    <section class="info-card">
+        
+        <!-- BMI Introduction -->
+        
+        <h2>
+            What is a BMI Calculator and Why Use It?
+        </h2>
+    
+        <p>
+            Body Mass Index (BMI) is a simple calculation using your height and weight to estimate body fat. This BMI Calculator helps you determine whether you fall into the Underweight, Normal, Overweight, or Obese category within seconds.
+        </p>
+
+        <p>
+            Tracking your BMI is often the first step toward understanding your overall health status and identifying potential health risks associated with being underweight or overweight.
+        </p>
+
+    </section>
+
+    <section class="info-card">
+    
+        <h2>
+            How Does This Calculator Work?
+        </h2>
+    
+        <ol>
+        
+            <li>
+                Enter your weight in kilograms (kg).
+            </li>
+        
+            <li>
+                Enter your height in centimeters (cm).
+            </li>
+
+            <li>
+                Click the Calculate BMI button.
+            </li>
+
+            <li>
+                Your BMI score, category, healthy weight range, and additional health information will be displayed instantly.
+            </li>
+        
+        </ol>
+
+    </section>
+
+    <section class="info-card">
+
+        <h2>
+            Understanding Your BMI Score
+        </h2>
+    
+        <h3>
+            For Adults (Age 18+) - WHO Standard Chart
+        </h3>
+    
+        <p>
+            This Body Mass Index Chart is widely used around the world for both men and women.
+        </p>
+    
+        <table class="bmi-table">
+        
+            <tr>
+                <th>BMI Range (kg/m²)</th>
+                <th>WHO Category</th>
+            </tr>
+
+            <tr>
+                <td>Below 18.5</td>
+                <td>Underweight</td>
+            </tr>
+
+            <tr>
+                <td>18.5 – 24.9</td>
+                <td>Normal Range</td>
+            </tr>
+
+            <tr>
+                <td>25.0 – 29.9</td>
+                <td>Overweight</td>
+            </tr>
+
+            <tr>
+                <td>30.0 – 34.9</td>
+                <td>Obese Class I</td>
+            </tr>
+
+            <tr>
+                <td>35.0 – 39.9</td>
+                <td>Obese Class II</td>
+            </tr>
+
+            <tr>
+                <td>40.0 or higher</td>
+                <td>Obese Class III</td>
+            </tr>
+    
+        </table>
+    
+        <br>
+    
+        <h3>
+            For Asian Adults - WHO Recommended
+        </h3>
+
+        <p>
+            Health risks can occur at a lower BMI for Asian populations. This chart is commonly recommended for India and other Asian countries.
+        </p>
+    
+        <table class="bmi-table">
+        
+            <tr>
+                <th>BMI Range (kg/m²)</th>
+                <th>Category for Asians</th>
+            </tr>
+ 
+            <tr>
+                <td>Below 18.5</td>
+                <td>Underweight</td>
+            </tr>
+
+            <tr>
+                <td>18.5 – 22.9</td>
+                <td>Normal</td>
+            </tr>
+
+            <tr>
+                <td>23.0 – 24.9</td>
+                <td>At Risk / Overweight</td>
+            </tr>
+
+            <tr>
+                <td>25.0 or higher</td>
+                <td>Obese</td>
+            </tr>
+    
+        </table>
+
+    </section>
+
+    <section class="info-card">
+
+        <h2>
+            Why is Checking BMI Important?
+        </h2>
+    
+        <ul>
+
+            <li>
+                <strong>Assess Health Risks:</strong>
+                A high or low BMI can indicate a higher risk of conditions such as heart disease, diabetes, and high blood pressure.
+            </li>
+
+            <li>
+                <strong>Set Fitness Goals:</strong>
+                Use your BMI score to establish realistic weight-loss or weight-gain targets.
+            </li>
+
+            <li>
+                <strong>Track Your Progress:</strong>
+                Regular BMI checks can help monitor the effectiveness of your diet and exercise plan.
+            </li>
+
+        </ul>
+
+    </section>
+
+    <section class="info-card">
+
+        <h2>
+            BMI for Children and Teens (Ages 2–18)
+        </h2>
+
+        <p>
+            For children and teenagers, BMI is age and gender-specific and is known as BMI-for-age percentile.
+        </p>
+
+        <P>
+            Instead of fixed BMI ranges, a child's BMI is compared against standardized growth charts.
+        </P>
+
+        <table class="bmi-table">
+
+            <tr>
+                <th>Percentile Range</th>
+                <th>Weight Category</th>
+            </tr>
+
+            <tr>
+                <td>Less than 5th percentile</td>
+                <td>Underweight</td>
+            </tr>
+
+            <tr>
+                <td>5th to 85th percentile</td>
+                <td>Healthy Weight</td>
+            </tr>
+
+            <tr>
+                <td>85th to 95th percentile</td>
+                <td>Overweight</td>
+            </tr>
+
+            <tr>
+                <td>95th percentile or higher</td>
+                <td>Obese</td>
+            </tr>
+
+        </table>
+
+        <p>
+            <strong>Important:</strong> BMI for children and teens is calculated differently. Please consult a pediatrician or healthcare professional for an accurate assessment.
+        </p>
+
+    </section>
+
+    <section class="info-card">
+
+        <h2>
+            Important Disclaimer
+        </h2>
+
+        <p>
+            This BMI Calculator is intended for informational purposes only and should not be considered a substitute for professional medical advice.
+        </p>
+
+        <p>
+            It is not a medical diagnostic tool.
+        </p>
+
+        <p>
+            BMI does not directly measure body fat and does not account for factors such as muscle mass, age, gender, body composition, or ethnicity.
+        </p>
+
+        <p>
+            Athletes and highly active individuals may have a higher BMI due to increased muscle mass rather than excess body fat.
+        </p>
+
+        <p>
+            Always consult a qualified healthcare provider before making medical, nutrition, or fitness decisions based on BMI results.
+        </p>
+
+        <P>
+            A trained healthcare provider should perform appropriate health assessments to evaluate your health status and risks.
+        </P>
+
+        <h4>
+            * Don't use this information to start a diet or exercise program without consulting a doctor first.
+        </h4>
+
+    </section>
+
+    <!-- FAQ -->
+
+    <h2 class="policy-heading">
+        Frequently Asked Questions
+    </h2>
+
+    <div class="accordion">
+        <button class="accordion-btn">
+            What is a healthy BMI range?
+        </button>
+    
+        <div class="accordion-content">
+        
+            <p>
+                For most Adutls, a BMI between 18.5 & 24.9 is considered Healthy according to WHO. For Asian Adults, the helthy range is 18.5 to 22.9. However, BMI is just a screening tool and doesn't directly measure Body Fat.
+            </p>
+    
+        </div>
+
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">
+            Is BMI accurate for everyone?
+        </button>
+    
+        <div class="accordion-content">
+        
+            <p>
+                No. BMI does not account for muscle mass, bone density, age, sex, or ethnicity. Athletes, bodybuilders, pregnant women, and elderly people may get misleading results. Always consult a doctor for a complete health assessment.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="accordion">
+
+        <button class="accordion-btn">
+            Can athletes have a high BMI?
+        </button>
+    
+        <div class="accordion-content">
+            <p>
+                Yes. Athletes often have higher BMI due to increased muscle mass.
+            </p>
+    
+        </div>
+
+    </div>
+
+    <div class="accordion">
+    
+        <button class="accordion-btn">
+            Why is BMI important?
+        </button>
+    
+        <div class="accordion-content">
+        
+            <p>
+                BMI helps identify potential weight-related health risks and supports healthy lifestyle decisions.
+            </p>
+    
+        </div>
+
+    </div>
+
+    <div class="accordion">
+    
+        <button class="accordion-btn">
+            What is the difference between BMI and Body Fat Percentage?
+        </button>
+    
+        <div class="accordion-content">
+        
+            <p>
+                BMI uses only height and weight to estimate weight category. Body Fat Percentage measures the actual amount of fat in your body using tools like calipers or DEXA scans. Body Fat % is more accurate for fitness tracking.
+            </p>
+    
+        </div>
+
+    </div>
+
+    <div class="accordion">
+    
+        <button class="accordion-btn">
+            What is a good BMI for women vs men?
+        </button>
+    
+        <div class="accordion-content">
+        
+            <p>
+                The BMI chart is the same for both men and women. However, women naturally have more body fat than men at the same BMI. That's why BMI should be used with other measurements like waist circumference.
+            </p>
+    
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <div>
+
+        <footer>
+
+            © 2026 SmartCalc Hub
+
+            <br>
+
+            Fast • Accurate • Free
+
+            <br><br>
+
+            <a href="../about.html">About</a>
+            /
+
+            <a href="../contact.html">Contact</a>
+            /
+
+            <a href="../privacy.html">Privacy Policy</a>
+            /
+
+            <a href="../terms.html">Terms & Conditions</a>
+            /
+
+            <a href="../disclaimer.html">Disclaimer</a>
+
+        </footer>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="../script.js"></script>
+
+    <script src="../js/bmi.js"></script>
+
+    <script src="../js/header.js"></script>
+
+    <script src="../js/header-loader.js"></script>
+
+</body>
+</html>

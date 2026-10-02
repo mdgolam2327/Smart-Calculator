@@ -1,0 +1,303 @@
+.calc-btn {
+    display: block;
+
+    width: 220px;
+
+    margin: 20px auto;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #224ca7ec,
+        #214ababc
+    );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 4px 12px rgba(7, 10, 17, 0.512);
+}
+
+.calc-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(37,99,235,0.4);
+}
+
+/* ===========================
+   AGE CALCULATOR
+=========================== */
+
+.calculator-card {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.08);
+
+    margin-top: 20px;
+
+}
+
+.calculator-card label{
+
+    display:block;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+
+    color:#374151;
+
+}
+
+.calculator-card input{
+
+    margin-bottom:18px;
+
+}
+
+.info-card{
+
+    background:#ffffff;
+
+    margin-top:30px;
+
+    padding:20px;
+
+    border-radius:16px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.info-card h3{
+
+    color:#2563eb;
+
+    margin-bottom:12px;
+
+    text-align:center;
+
+}
+
+.info-card p{
+
+    line-height:1.8;
+
+    color:#555;
+
+    text-align:justify;
+
+}
+
+/* ===========================
+   RESULT CARD
+=========================== */
+
+.result-card{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:12px;
+
+    margin-top:15px;
+
+    text-align:center;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.08);
+
+    animation:fadeUp .4s ease;
+
+}
+
+.result-title{
+
+    font-size:15px;
+
+    color:#6b7280;
+
+    margin-bottom:8px;
+
+}
+
+.result-value{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    color:#2563eb;
+
+    line-height:1.6;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.copy-btn,
+.share-btn,
+.pdf-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    margin-top:12px;
+
+    transition:.3s;
+
+}
+
+.copy-btn{
+
+    background:#16a34a;
+
+}
+
+.share-btn{
+
+    background:#2563eb;
+
+}
+
+.pdf-btn{
+
+    background:#dc2626;
+
+}
+
+.copy-btn:hover,
+.share-btn:hover,
+.pdf-btn:hover{
+
+    transform:translateY(-2px);
+
+    opacity:.95;
+
+}
+
+/* ===========================
+   DARK MODE
+=========================== */
+
+.dark-mode .calculator-card,
+
+.dark-mode .info-card,
+
+.dark-mode .result-card{
+
+    background:#2a2a2a;
+
+}
+
+.dark-mode .calculator-card label{
+
+    color:white;
+
+}
+
+.dark-mode .info-card p{
+
+    color:#d1d5db;
+
+}
+
+.dark-mode .result-title{
+
+    color:#d1d5db;
+
+}
+
+.dark-mode .result-value{
+
+    color:#60a5fa;
+
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+    .calculator-card{
+
+        padding:15px;
+
+    }
+
+    .result-value{
+
+        font-size:21px;
+
+    }
+
+    .info-card{
+
+        padding:15px;
+
+    }
+
+}

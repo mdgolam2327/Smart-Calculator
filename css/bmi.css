@@ -1,0 +1,387 @@
+/* BMI Calculator Specific CSS */
+
+.action-buttons {
+
+    display: none;
+
+    opacity: 0;
+
+    transition: .4s ease;
+
+}
+
+.action-buttons.show {
+
+    display: block;
+
+    opacity: 1;
+
+}
+
+.bmi-form {
+    margin-top: 20px;
+}
+
+.bmi-gauge-card {
+
+    margin-top: 25px;
+
+    background: #ffffff;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.08);
+
+    text-align: center;
+
+}
+
+.bmi-gauge {
+
+    width: 100%;
+
+    max-width: 320px;
+
+    height: auto;
+
+}
+
+#gaugeNeedle {
+
+    transform-origin: 150px 150px;
+
+    transition: transform 1s ease;
+
+}
+
+.gauge-labels {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 5px;
+
+    margin-top: 10px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+.gauge-labels span:nth-child(1) {
+    color: #3b82f6;
+}
+
+.gauge-labels span:nth-child(2) {
+    color: #22c55e;
+}
+
+.gauge-labels span:nth-child(3) {
+    color: #f59e0b;
+}
+
+.gauge-labels span:nth-child(4) {
+    color: #ef4444;
+}
+
+/* Result Card */
+
+.bmi-result-card {
+
+    margin-top: 25px;
+
+    background: #ffffff;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.08);
+
+}
+
+.bmi-score {
+
+    font-size: 48px;
+
+    font-weight: bold;
+
+    color: #2563eb;
+
+    margin: 15px 0;
+
+}
+
+.bmi-category {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+}
+
+/* Info Cards */
+
+.info-card {
+
+    margin-top: 25px;
+
+    background: #ffffff;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.08);
+
+}
+
+.info-card h2 {
+
+    color: #2563eb;
+
+    margin-bottom: 15px;
+
+    text-align: center;
+
+}
+
+.info-card p {
+
+    text-align: left;
+
+    line-height: 1.7;
+
+}
+
+/* Detailed Analysis */
+
+#healthyWeight,
+#bmiPrime,
+#ponderalIndex {
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin: 10px 0;
+
+}
+
+/* BMI Table */
+
+.bmi-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 10px;
+
+}
+
+.bmi-table th {
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 12px;
+
+}
+
+.bmi-table td {
+
+    border: 1px solid #e5e7eb;
+
+    padding: 12px;
+
+    text-align: center;
+
+}
+
+.bmi-table tr:nth-child(even) {
+
+    background: #f8fafc;
+
+}
+
+/* Health Tips */
+
+#healthTips ul {
+
+    margin-top: 10px;
+
+    padding-left: 20px;
+
+}
+
+#healthTips li {
+
+    margin-bottom: 8px;
+
+}
+
+/* Category Colors */
+
+.underweight {
+
+    color: #3b82f6;
+
+}
+
+.normal {
+
+    color: #22c55e;
+
+}
+
+.overweight {
+
+    color: #f59e0b;
+
+}
+
+.obese {
+
+    color: #ef4444;
+
+}
+
+/* Dark Mode */
+
+.dark-mode .bmi-gauge-card,
+.dark-mode .bmi-result-card,
+.dark-mode .info-card {
+
+    background: #2a2a2a;
+
+    color: white;
+
+}
+
+.dark-mode .bmi-table td {
+
+    border-color: #444;
+
+}
+
+.dark-mode .bmi-table tr:nth-child(even) {
+
+    background: #333;
+
+}
+
+.dark-mode .bmi-score {
+
+    color: #60a5fa;
+
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .bmi-score {
+
+        font-size: 38px;
+
+    }
+
+    .bmi-category {
+
+        font-size: 18px;
+
+    }
+
+    .gauge-labels {
+
+        font-size: 10px;
+
+    }
+
+    .info-card {
+
+        padding: 15px;
+
+    }
+
+}
+
+.calc-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    width: 220px;
+
+    margin: 20px auto;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #1f4db0,
+        #2a4fb5
+    );
+
+    color: rgb(17, 17, 15);
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+.calc-btn {
+    display: block;
+
+    width: 220px;
+
+    margin: 20px auto;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #224ca7ec,
+        #214ababc
+    );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 4px 12px rgba(7, 10, 17, 0.512);
+}
