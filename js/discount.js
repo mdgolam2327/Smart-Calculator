@@ -25,7 +25,7 @@ function calculateDiscount() {
 
     document.getElementById("result").innerHTML =
 
-    `<div class="result-card">
+        `<div class="result-card">
         <div class="result-title">
             You Save
         </div>
@@ -74,7 +74,7 @@ function calculateDiscount() {
     </button>`;
 
     saveHistory(
-    `Discount Calculator
+        `Discount Calculator
 
     You Save: ₹${discountAmount.toFixed(2)}
     Final Price: ₹${finalPrice.toFixed(2)}

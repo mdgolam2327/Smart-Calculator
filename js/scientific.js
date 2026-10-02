@@ -39,13 +39,13 @@ document.querySelectorAll("[data-action]").forEach(btn => {
 });
 
 document.getElementById("equalBtn")
-.addEventListener("click", calculate);
+    .addEventListener("click", calculate);
 
 // -----------------------------
 // Insert Value
 // -----------------------------
 
-function insertValue(value){
+function insertValue(value) {
 
     display.value += value;
 
@@ -55,19 +55,19 @@ function insertValue(value){
 // Insert Function
 // -----------------------------
 
-function insertFunction(func){
+function insertFunction(func) {
 
-    switch(func){
+    switch (func) {
 
         case "nCr":
 
-            if(shiftMode){
+            if (shiftMode) {
 
                 display.value += "nPr(";
 
             }
 
-            else{
+            else {
 
                 display.value += "nCr(";
 
@@ -77,13 +77,13 @@ function insertFunction(func){
 
         case "sin":
 
-            if(shiftMode){
+            if (shiftMode) {
 
                 display.value += "asin(";
 
             }
 
-            else{
+            else {
 
                 display.value += "sin(";
 
@@ -93,23 +93,23 @@ function insertFunction(func){
 
         case "cos":
 
-            if(shiftMode){
+            if (shiftMode) {
                 display.value += "acos(";
             }
 
-            else{
+            else {
                 display.value += "cos(";
             }
 
             break;
 
         case "tan":
-            
-            if(shiftMode){
+
+            if (shiftMode) {
                 display.value += "atan(";
             }
 
-            else{
+            else {
                 display.value += "tan(";
             }
 
@@ -117,13 +117,13 @@ function insertFunction(func){
 
         case "log":
 
-            if(shiftMode){
+            if (shiftMode) {
 
                 display.value += "10^(";
 
             }
 
-            else{
+            else {
 
                 display.value += "log(";
 
@@ -133,13 +133,13 @@ function insertFunction(func){
 
         case "ln":
 
-            if(shiftMode){
+            if (shiftMode) {
 
                 display.value += "exp(";
 
             }
 
-            else{
+            else {
 
                 display.value += "ln(";
 
@@ -149,13 +149,13 @@ function insertFunction(func){
 
         case "sqrt":
 
-            if(shiftMode){
+            if (shiftMode) {
 
                 display.value += "cbrt(";
 
             }
 
-            else{
+            else {
 
                 display.value += "sqrt(";
 
@@ -165,8 +165,8 @@ function insertFunction(func){
 
     }
 
-    if(shiftMode){
-        
+    if (shiftMode) {
+
         toggleShift();
 
     }
@@ -177,9 +177,9 @@ function insertFunction(func){
 // Handle Buttons
 // -----------------------------
 
-function handleAction(action){
+function handleAction(action) {
 
-    switch(action){
+    switch (action) {
 
         case "clear":
 
@@ -190,7 +190,7 @@ function handleAction(action){
         case "delete":
 
             display.value =
-            display.value.slice(0,-1);
+                display.value.slice(0, -1);
 
             break;
 
@@ -268,15 +268,15 @@ function handleAction(action){
 // Degree / Radian
 // -----------------------------
 
-function toggleAngle(){
+function toggleAngle() {
 
     angleMode =
-    angleMode === "DEG"
-    ? "RAD"
-    : "DEG";
+        angleMode === "DEG"
+            ? "RAD"
+            : "DEG";
 
     document.getElementById("angleMode")
-    .textContent = angleMode;
+        .textContent = angleMode;
 
 }
 
@@ -284,13 +284,13 @@ function toggleAngle(){
 // Memory Indicator
 // -----------------------------
 
-function updateMemoryStatus(){
+function updateMemoryStatus() {
 
     document.getElementById("memoryStatus")
-    .textContent =
-    memory !== 0
-    ? "M"
-    : "";
+        .textContent =
+        memory !== 0
+            ? "M"
+            : "";
 
 }
 
@@ -298,17 +298,17 @@ function updateMemoryStatus(){
 // Answer Indicator
 // -----------------------------
 
-function updateAnsStatus(){
+function updateAnsStatus() {
 
     document.getElementById("ansStatus")
-    .textContent =
-    lastAnswer !== 0
-    ? "ANS"
-    : "";
+        .textContent =
+        lastAnswer !== 0
+            ? "ANS"
+            : "";
 
 }
 
-function formatNCR(exp){
+function formatNCR(exp) {
 
     exp = exp.replace(
         /(\d+)\s*nCr\s*(\d+)/g,
@@ -324,15 +324,15 @@ function formatNCR(exp){
 
 }
 
-function convertNCR(exp){
+function convertNCR(exp) {
 
     exp = exp.replace(
 
         /nCr\((\d+),(\d+)\)/g,
 
-        (_,n,r)=>{
+        (_, n, r) => {
 
-            return combination(n,r);
+            return combination(n, r);
 
         }
 
@@ -342,9 +342,9 @@ function convertNCR(exp){
 
         /nPr\((\d+),(\d+)\)/g,
 
-        (_,n,r)=>{
+        (_, n, r) => {
 
-            return permutation(n,r);
+            return permutation(n, r);
 
         }
 
@@ -366,9 +366,9 @@ function calculate() {
 
         if (exp === "") return;
 
-         exp = formatNCR(exp);
+        exp = formatNCR(exp);
 
-         exp = convertNCR(exp);
+        exp = convertNCR(exp);
 
         // --------------------------
         // Constants
@@ -420,7 +420,7 @@ function calculate() {
 
             /10\^\((.*?)\)/g,
 
-            (_,n)=>{
+            (_, n) => {
 
                 return Math.pow(10, Number(n));
 
@@ -434,7 +434,7 @@ function calculate() {
 
             /exp\((.*?)\)/g,
 
-            (_,n)=>{
+            (_, n) => {
 
                 return Math.exp(Number(n));
 
@@ -461,7 +461,7 @@ function calculate() {
             /(\d+(\.\d+)?)\*\*2/g,
             (_, n) => {
 
-                return Math.pow(Number(n),2);
+                return Math.pow(Number(n), 2);
 
             }
         );
@@ -472,9 +472,9 @@ function calculate() {
 
         exp = exp.replace(
             /(\d+(\.\d+)?)\*\*3/g,
-            (_, n)=>{
+            (_, n) => {
 
-                return Math.pow(Number(n),3);
+                return Math.pow(Number(n), 3);
 
             }
         );
@@ -487,9 +487,9 @@ function calculate() {
 
             /(\d+(\.\d+)?)\*\*-1/g,
 
-            (_,n)=>{
+            (_, n) => {
 
-                return 1/Number(n);
+                return 1 / Number(n);
 
             }
 
@@ -505,7 +505,7 @@ function calculate() {
 
         let result = eval(exp);
 
-        if(!isFinite(result)){
+        if (!isFinite(result)) {
 
             throw Error();
 
@@ -519,13 +519,13 @@ function calculate() {
 
         updateMemoryStatus();
 
-        display.value=result;
+        display.value = result;
 
         saveHistory(result);
 
     }
 
-    catch{
+    catch {
 
         display.value = "Error";
 
@@ -537,22 +537,22 @@ function calculate() {
 // Factorial
 // ==========================================
 
-function factorial(n){
+function factorial(n) {
 
     n = Number(n);
 
-    if(n < 0) return NaN;
+    if (n < 0) return NaN;
 
-    if(!Number.isInteger(n)) return NaN;
+    if (!Number.isInteger(n)) return NaN;
 
-    if(n===0 || n===1)
+    if (n === 0 || n === 1)
         return 1;
 
     let result = 1;
 
-    for(let i=2;i<=n;i++){
+    for (let i = 2; i <= n; i++) {
 
-        result*=i;
+        result *= i;
 
     }
 
@@ -564,19 +564,19 @@ function factorial(n){
 //Combination/nCr
 //===========================================
 
-function combination(n,r){
+function combination(n, r) {
 
     n = Number(n);
 
     r = Number(r);
 
-    if(r>n || r<0){
+    if (r > n || r < 0) {
 
         return NaN;
 
     }
 
-    return factorial(n) / (factorial(r) * factorial(n-r));
+    return factorial(n) / (factorial(r) * factorial(n - r));
 
 }
 
@@ -584,19 +584,19 @@ function combination(n,r){
 //Permutation/pCr
 //===========================================
 
-function permutation(n,r){
+function permutation(n, r) {
 
     n = Number(n);
 
     r = Number(r);
 
-    if(r>n || r<0){
+    if (r > n || r < 0) {
 
         return NaN;
 
     }
 
-    return factorial(n) / factorial(n-r);
+    return factorial(n) / factorial(n - r);
 
 }
 
@@ -604,13 +604,13 @@ function permutation(n,r){
 // Convert Degree / Radian
 // ==========================================
 
-function toRadians(value){
+function toRadians(value) {
 
     return value * Math.PI / 180;
 
 }
 
-function toDegrees(value){
+function toDegrees(value) {
 
     return value * 180 / Math.PI;
 
@@ -620,19 +620,19 @@ function toDegrees(value){
 // Trigonometric Functions
 // ==========================================
 
-function calculateTrig(exp){
+function calculateTrig(exp) {
 
-        // -----------------------
+    // -----------------------
     // sin⁻¹
     // -----------------------
 
     exp = exp.replace(/asin\((.*?)\)/g,
 
-        (_,num)=>{
+        (_, num) => {
 
             let value = Math.asin(Number(num));
 
-            if(angleMode==="DEG"){
+            if (angleMode === "DEG") {
 
                 value = toDegrees(value);
 
@@ -650,11 +650,11 @@ function calculateTrig(exp){
 
     exp = exp.replace(/acos\((.*?)\)/g,
 
-        (_,num)=>{
+        (_, num) => {
 
             let value = Math.acos(Number(num));
 
-            if(angleMode==="DEG"){
+            if (angleMode === "DEG") {
 
                 value = toDegrees(value);
 
@@ -672,11 +672,11 @@ function calculateTrig(exp){
 
     exp = exp.replace(/atan\((.*?)\)/g,
 
-        (_,num)=>{
+        (_, num) => {
 
             let value = Math.atan(Number(num));
 
-            if(angleMode==="DEG"){
+            if (angleMode === "DEG") {
 
                 value = toDegrees(value);
 
@@ -694,11 +694,11 @@ function calculateTrig(exp){
 
     exp = exp.replace(/sin\((.*?)\)/g,
 
-        (_,num)=>{
+        (_, num) => {
 
             let value = Number(num);
 
-            if(angleMode==="DEG"){
+            if (angleMode === "DEG") {
 
                 value = toRadians(value);
 
@@ -716,11 +716,11 @@ function calculateTrig(exp){
 
     exp = exp.replace(/cos\((.*?)\)/g,
 
-        (_,num)=>{
+        (_, num) => {
 
             let value = Number(num);
 
-            if(angleMode==="DEG"){
+            if (angleMode === "DEG") {
 
                 value = toRadians(value);
 
@@ -738,11 +738,11 @@ function calculateTrig(exp){
 
     exp = exp.replace(/tan\((.*?)\)/g,
 
-        (_,num)=>{
+        (_, num) => {
 
             let value = Number(num);
 
-            if(angleMode==="DEG"){
+            if (angleMode === "DEG") {
 
                 value = toRadians(value);
 
@@ -762,13 +762,13 @@ function calculateTrig(exp){
 // Factorial Parser
 // ==========================================
 
-function parseFactorial(exp){
+function parseFactorial(exp) {
 
     return exp.replace(
 
         /(\d+)!/g,
 
-        (_,num)=>{
+        (_, num) => {
 
             return factorial(num);
 
@@ -778,13 +778,13 @@ function parseFactorial(exp){
 
 }
 
-function insertNCR(){
+function insertNCR() {
 
-    if(shiftMode){
+    if (shiftMode) {
 
         display.value += " nPr ";
 
-    }else{
+    } else {
 
         display.value += " nCr ";
 
@@ -796,7 +796,7 @@ function insertNCR(){
 // Clear Display
 // ===========================
 
-function clearDisplay(){
+function clearDisplay() {
 
     display.value = "";
 
@@ -806,9 +806,9 @@ function clearDisplay(){
 // Delete Last Character
 // ===========================
 
-function deleteLast(){
+function deleteLast() {
 
-    display.value = display.value.slice(0,-1);
+    display.value = display.value.slice(0, -1);
 
 }
 
@@ -816,12 +816,12 @@ function deleteLast(){
 // Keyboard Support
 // ==========================================
 
-document.addEventListener("keydown", function(e){
+document.addEventListener("keydown", function (e) {
 
     const key = e.key;
 
     // Number
-    if(/[0-9]/.test(key)){
+    if (/[0-9]/.test(key)) {
 
         display.value += key;
 
@@ -830,7 +830,7 @@ document.addEventListener("keydown", function(e){
     }
 
     // Operators
-    if(["+","-","*","/","(",")",".","%"].includes(key)){
+    if (["+", "-", "*", "/", "(", ")", ".", "%"].includes(key)) {
 
         display.value += key;
 
@@ -839,7 +839,7 @@ document.addEventListener("keydown", function(e){
     }
 
     // Enter = Calculate
-    if(key==="Enter"){
+    if (key === "Enter") {
 
         e.preventDefault();
 
@@ -850,7 +850,7 @@ document.addEventListener("keydown", function(e){
     }
 
     // Backspace
-    if(key==="Backspace"){
+    if (key === "Backspace") {
 
         e.preventDefault();
 
@@ -862,7 +862,7 @@ document.addEventListener("keydown", function(e){
 
     // Delete
 
-    if(key==="Delete"){
+    if (key === "Delete") {
 
         clearDisplay();
 
@@ -872,7 +872,7 @@ document.addEventListener("keydown", function(e){
 
     // Escape
 
-    if(key==="Escape"){
+    if (key === "Escape") {
 
         clearDisplay();
 
@@ -887,9 +887,9 @@ document.addEventListener("keydown", function(e){
 // Copy Result
 // ==========================================
 
-function copyResult(){
+function copyResult() {
 
-    if(display.value==="") return;
+    if (display.value === "") return;
 
     navigator.clipboard.writeText(display.value);
 
@@ -902,17 +902,17 @@ function copyResult(){
 // Share Result
 // ==========================================
 
-async function shareResult(){
+async function shareResult() {
 
-    if(display.value==="") return;
+    if (display.value === "") return;
 
-    if(navigator.share){
+    if (navigator.share) {
 
         await navigator.share({
 
-            title:"Scientific Calculator",
+            title: "Scientific Calculator",
 
-            text:"Result : "+display.value
+            text: "Result : " + display.value
 
         });
 
@@ -925,7 +925,7 @@ async function shareResult(){
 // Download PDF
 // ==========================================
 
-function downloadPDF(){
+function downloadPDF() {
 
     const win = window.open();
 
@@ -937,7 +937,7 @@ function downloadPDF(){
 
     win.document.write(
 
-        "<h1>"+display.value+"</h1>"
+        "<h1>" + display.value + "</h1>"
 
     );
 
@@ -950,7 +950,7 @@ function downloadPDF(){
 // Save History
 // ==========================================
 
-function saveHistory(result){
+function saveHistory(result) {
 
     let history =
 
@@ -966,15 +966,15 @@ function saveHistory(result){
 
     history.unshift({
 
-        expression:display.value,
+        expression: display.value,
 
-        answer:result,
+        answer: result,
 
-        date:new Date().toLocaleString()
+        date: new Date().toLocaleString()
 
     });
 
-    if(history.length>30){
+    if (history.length > 30) {
 
         history.pop();
 
@@ -995,7 +995,7 @@ function saveHistory(result){
 // Show History
 // ==========================================
 
-function getHistory(){
+function getHistory() {
 
     return JSON.parse(
 
@@ -1014,36 +1014,36 @@ function getHistory(){
 // ==========================================
 
 // Format Result
-function formatResult(value){
+function formatResult(value) {
 
-    if(typeof value !== "number"){
+    if (typeof value !== "number") {
 
         value = Number(value);
 
     }
 
-    if(!isFinite(value)){
+    if (!isFinite(value)) {
 
         return "Math Error";
 
     }
 
     // Remove -0
-    if(Object.is(value,-0)){
+    if (Object.is(value, -0)) {
 
         value = 0;
 
     }
 
     // Scientific Notation
-    if(Math.abs(value)>=1e12){
+    if (Math.abs(value) >= 1e12) {
 
         return value.toExponential(8);
 
     }
 
     // Small Number
-    if(value!==0 && Math.abs(value)<1e-10){
+    if (value !== 0 && Math.abs(value) < 1e-10) {
 
         return value.toExponential(8);
 
@@ -1059,7 +1059,7 @@ function formatResult(value){
 // Replace Display Result
 // ==========================================
 
-function showResult(result){
+function showResult(result) {
 
     result = formatResult(result);
 
@@ -1073,25 +1073,25 @@ function showResult(result){
 // Check Brackets
 // ==========================================
 
-function checkBrackets(exp){
+function checkBrackets(exp) {
 
     let count = 0;
 
-    for(let ch of exp){
+    for (let ch of exp) {
 
-        if(ch==="("){
+        if (ch === "(") {
 
             count++;
 
         }
 
-        if(ch===")"){
+        if (ch === ")") {
 
             count--;
 
         }
 
-        if(count<0){
+        if (count < 0) {
 
             return false;
 
@@ -1099,7 +1099,7 @@ function checkBrackets(exp){
 
     }
 
-    return count===0;
+    return count === 0;
 
 }
 
@@ -1109,19 +1109,19 @@ function checkBrackets(exp){
 // Auto Close Brackets
 // ==========================================
 
-function autoCloseBrackets(){
+function autoCloseBrackets() {
 
     let open =
 
-        (display.value.match(/\(/g)||[]).length;
+        (display.value.match(/\(/g) || []).length;
 
     let close =
 
-        (display.value.match(/\)/g)||[]).length;
+        (display.value.match(/\)/g) || []).length;
 
-    while(close<open){
+    while (close < open) {
 
-        display.value+=")";
+        display.value += ")";
 
         close++;
 
@@ -1135,21 +1135,21 @@ function autoCloseBrackets(){
 // Prevent Double Operator
 // ==========================================
 
-function cleanOperators(){
+function cleanOperators() {
 
     display.value =
 
-    display.value.replace(
+        display.value.replace(
 
-        /(\+|\-|\*|\/){2,}/g,
+            /(\+|\-|\*|\/){2,}/g,
 
-        (match)=>{
+            (match) => {
 
-            return match.slice(-1);
+                return match.slice(-1);
 
-        }
+            }
 
-    );
+        );
 
 }
 
@@ -1159,7 +1159,7 @@ function cleanOperators(){
 // Auto Fix Before Calculate
 // ==========================================
 
-function prepareExpression(){
+function prepareExpression() {
 
     cleanOperators();
 
@@ -1175,13 +1175,13 @@ function prepareExpression(){
 
 const oldCalculate = calculate;
 
-calculate = function(){
+calculate = function () {
 
     prepareExpression();
 
     oldCalculate();
 
-    if(display.value!=="Error"){
+    if (display.value !== "Error") {
 
         showResult(display.value);
 
@@ -1207,7 +1207,7 @@ updateAnsStatus();
 
 console.log(
 
-"Scientific Calculator Pro Loaded"
+    "Scientific Calculator Pro Loaded"
 
 );
 
@@ -1217,7 +1217,7 @@ console.log(
 
 let shiftMode = false;
 
-function toggleShift(){
+function toggleShift() {
 
     shiftMode = !shiftMode;
 
@@ -1225,33 +1225,33 @@ function toggleShift(){
 
     btn.classList.toggle("active");
 
-    if(shiftMode){
+    if (shiftMode) {
 
         document.getElementById("nCrBtn").innerText = "nPr";
 
-        document.getElementById("sinBtn").innerText="sin⁻¹";
-        document.getElementById("cosBtn").innerText="cos⁻¹";
-        document.getElementById("tanBtn").innerText="tan⁻¹";
+        document.getElementById("sinBtn").innerText = "sin⁻¹";
+        document.getElementById("cosBtn").innerText = "cos⁻¹";
+        document.getElementById("tanBtn").innerText = "tan⁻¹";
 
-        document.getElementById("logBtn").innerText="10ˣ";
-        document.getElementById("lnBtn").innerText="eˣ";
+        document.getElementById("logBtn").innerText = "10ˣ";
+        document.getElementById("lnBtn").innerText = "eˣ";
 
-        document.getElementById("sqrtBtn").innerText="³√";
+        document.getElementById("sqrtBtn").innerText = "³√";
 
     }
 
-    else{
+    else {
 
         document.getElementById("nCrBtn").innerText = "nCr";
 
-        document.getElementById("sinBtn").innerText="sin";
-        document.getElementById("cosBtn").innerText="cos";
-        document.getElementById("tanBtn").innerText="tan";
+        document.getElementById("sinBtn").innerText = "sin";
+        document.getElementById("cosBtn").innerText = "cos";
+        document.getElementById("tanBtn").innerText = "tan";
 
-        document.getElementById("logBtn").innerText="log";
-        document.getElementById("lnBtn").innerText="ln";
+        document.getElementById("logBtn").innerText = "log";
+        document.getElementById("lnBtn").innerText = "ln";
 
-        document.getElementById("sqrtBtn").innerText="√";
+        document.getElementById("sqrtBtn").innerText = "√";
 
     }
 

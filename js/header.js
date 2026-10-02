@@ -11,14 +11,14 @@ const SUB_FOLDERS = [
 
 ];
 
-function getBasePrefix(){
+function getBasePrefix() {
 
     const parts = CURRENT_PATH.split("/");
 
     const currentFolder =
         parts[parts.length - 2];
 
-    if(SUB_FOLDERS.includes(currentFolder)){
+    if (SUB_FOLDERS.includes(currentFolder)) {
 
         return "../";
 
@@ -34,7 +34,7 @@ function getBasePrefix(){
 
 function initHeader() {
 
-    if(window.headerInitialized){
+    if (window.headerInitialized) {
 
         return;
 
@@ -119,29 +119,29 @@ function initHeader() {
 
     }
 
-    function setupActiveLink(){
+    function setupActiveLink() {
 
         const currentPage =
             window.location.pathname
-            .split("/")
-            .pop();
-
-        document
-        .querySelectorAll("[data-link]")
-        .forEach(link=>{
-
-            const targetPage =
-                link.dataset.link
                 .split("/")
                 .pop();
 
-            if(targetPage===currentPage){
+        document
+            .querySelectorAll("[data-link]")
+            .forEach(link => {
 
-                link.classList.add("active");
+                const targetPage =
+                    link.dataset.link
+                        .split("/")
+                        .pop();
 
-            }
+                if (targetPage === currentPage) {
 
-        });
+                    link.classList.add("active");
+
+                }
+
+            });
 
     }
 
@@ -149,37 +149,37 @@ function initHeader() {
     setupActiveLink();
 
     document
-    .querySelectorAll("[data-link]")
-    .forEach(link=>{
+        .querySelectorAll("[data-link]")
+        .forEach(link => {
 
-        link.addEventListener(
-            "click",
-            function(e){
+            link.addEventListener(
+                "click",
+                function (e) {
 
-                const currentPage =
-                    window.location.pathname
-                    .split("/")
-                    .pop();
+                    const currentPage =
+                        window.location.pathname
+                            .split("/")
+                            .pop();
 
-                const targetPage =
-                    link.dataset.link
-                    .split("/")
-                    .pop();
+                    const targetPage =
+                        link.dataset.link
+                            .split("/")
+                            .pop();
 
-                if(
-                    currentPage===targetPage
-                ){
+                    if (
+                        currentPage === targetPage
+                    ) {
 
-                    e.preventDefault();
+                        e.preventDefault();
+
+                    }
+
+                    closeSidebar();
 
                 }
 
-                closeSidebar();
+            );
 
-            }
-
-        );
-
-    });
+        });
 
 }

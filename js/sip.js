@@ -18,7 +18,7 @@ function calculateSIP() {
         isNaN(years)
     ) {
         document.getElementById("result").innerHTML =
-        "Please enter All values";
+            "Please enter All values";
         return;
     }
 
@@ -44,7 +44,7 @@ function calculateSIP() {
 
     document.getElementById("result").innerHTML =
 
-    `<div class="result-card">
+        `<div class="result-card">
         <div class="result-title">
             Invested Amount
         </div>
@@ -102,7 +102,7 @@ function calculateSIP() {
     </button>`;
 
     saveHistory(
-    `SIP Calculator
+        `SIP Calculator
 
     Invested Amount: ₹${investedAmount.toFixed(2)}
     Total Value: ₹${futureValue.toFixed(2)}

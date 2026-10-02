@@ -242,8 +242,8 @@ function calculateBMI() {
         <ul>
 
             ${tips.map(tip =>
-                `<li>${tip}</li>`
-            ).join("")}
+            `<li>${tip}</li>`
+        ).join("")}
 
         </ul>`;
 
@@ -251,7 +251,7 @@ function calculateBMI() {
 
     const historyText =
 
-`BMI: ${bmiRounded}
+        `BMI: ${bmiRounded}
 Category: ${category}
 Weight: ${weight} kg
 Height: ${heightCm} cm`;

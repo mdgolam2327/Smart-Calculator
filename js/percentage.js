@@ -24,7 +24,7 @@ function calculatePercentage() {
 
     document.getElementById("result").innerHTML =
 
-    `<div class="result-card">
+        `<div class="result-card">
         <div class="result-title">
             Percentage
         </div>
@@ -64,7 +64,7 @@ function calculatePercentage() {
     </button>`;
 
     saveHistory(
-    `Percentage Calculator
+        `Percentage Calculator
 
     Result: ${percentage.toFixed(2)}%
 

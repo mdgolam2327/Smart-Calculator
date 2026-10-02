@@ -23,41 +23,41 @@
 
     z-index: 1000;
 
-    box-shadow: 0 3px 12px rgba(0,0,0,.15);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .15);
 
 }
 
-.header-container{
+.header-container {
 
-    width:100%;
+    width: 100%;
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
-    padding:0 18px;
+    padding: 0 18px;
 
 }
 
-.header-left{
+.header-left {
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
     gap: 2px;
 
 }
 
-.logo{
+.logo {
 
-    font-size:22px;
+    font-size: 22px;
 
-    font-weight:bold;
+    font-weight: bold;
 
-    user-select:none;
+    user-select: none;
 
-    white-space:nowrap;
+    white-space: nowrap;
 
 }
 
@@ -66,39 +66,39 @@
    MENU BUTTON
 =========================== */
 
-.menu-btn{
+.menu-btn {
 
-    width:30px;
+    width: 30px;
 
-    height:42px;
+    height: 42px;
 
-    background:none;
+    background: none;
 
-    border:none;
+    border: none;
 
-    cursor:pointer;
+    cursor: pointer;
 
-    display:flex;
+    display: flex;
 
-    flex-direction:column;
+    flex-direction: column;
 
-    justify-content:center;
+    justify-content: center;
 
-    gap:6px;
+    gap: 6px;
 
 }
 
-.menu-btn span{
+.menu-btn span {
 
-    width:20px;
+    width: 20px;
 
-    height:2px;
+    height: 2px;
 
-    background:white;
+    background: white;
 
-    border-radius:20px;
+    border-radius: 20px;
 
-    transition:.3s;
+    transition: .3s;
 
 }
 
@@ -107,33 +107,33 @@
    SIDEBAR
 =========================== */
 
-.sidebar{
+.sidebar {
 
-    position:fixed;
+    position: fixed;
 
-    top:0;
+    top: 0;
 
-    left:-320px;
+    left: -320px;
 
     width: 300px;
 
-    height:100vh;
+    height: 100vh;
 
-    background:white;
+    background: white;
 
-    overflow-y:auto;
+    overflow-y: auto;
 
-    transition:.35s;
+    transition: .35s;
 
-    z-index:2000;
+    z-index: 2000;
 
-    box-shadow:4px 0 18px rgba(0,0,0,.25);
+    box-shadow: 4px 0 18px rgba(0, 0, 0, .25);
 
 }
 
-.sidebar.active{
+.sidebar.active {
 
-    left:0;
+    left: 0;
 
 }
 
@@ -142,25 +142,25 @@
    SIDEBAR TOP
 =========================== */
 
-.sidebar-top{
+.sidebar-top {
 
-    background:#142a5c;
+    background: #142a5c;
 
-    color:white;
+    color: white;
 
-    display:flex;
+    display: flex;
 
-    justify-content:space-between;
+    justify-content: space-between;
 
-    align-items:center;
+    align-items: center;
 
-    padding:6px;
+    padding: 6px;
 
 }
 
-.sidebar-top h2{
+.sidebar-top h2 {
 
-    font-size:22px;
+    font-size: 22px;
 
 }
 
@@ -169,17 +169,17 @@
    CLOSE BUTTON
 =========================== */
 
-.close-btn{
+.close-btn {
 
-    border:none;
+    border: none;
 
-    background:none;
+    background: none;
 
-    color:white;
+    color: white;
 
-    font-size:30px;
+    font-size: 30px;
 
-    cursor:pointer;
+    cursor: pointer;
 
 }
 
@@ -188,57 +188,57 @@
    SIDEBAR MENU
 =========================== */
 
-.sidebar-menu{
+.sidebar-menu {
 
-    display:flex;
+    display: flex;
 
-    flex-direction:column;
+    flex-direction: column;
 
-    padding:5px;
-
-}
-
-.sidebar-menu h3{
-
-    margin:15px 0 10px;
-
-    color:#19253e;
-
-    font-size:18px;
+    padding: 5px;
 
 }
 
-.sidebar-menu a{
+.sidebar-menu h3 {
 
-    text-decoration:none;
+    margin: 15px 0 10px;
 
-    color:#222;
+    color: #19253e;
 
-    padding:8px 15px;
-
-    border-radius:10px;
-
-    transition:.25s;
-
-    font-size:16px;
+    font-size: 18px;
 
 }
 
-.sidebar-menu a:hover{
+.sidebar-menu a {
 
-    background:#274a96;
+    text-decoration: none;
 
-    color:white;
+    color: #222;
+
+    padding: 8px 15px;
+
+    border-radius: 10px;
+
+    transition: .25s;
+
+    font-size: 16px;
 
 }
 
-.sidebar-menu hr{
+.sidebar-menu a:hover {
 
-    margin:18px 0;
+    background: #274a96;
 
-    border:none;
+    color: white;
 
-    border-top:1px solid #ddd;
+}
+
+.sidebar-menu hr {
+
+    margin: 18px 0;
+
+    border: none;
+
+    border-top: 1px solid #ddd;
 
 }
 
@@ -247,29 +247,29 @@
    OVERLAY
 =========================== */
 
-.overlay{
+.overlay {
 
-    position:fixed;
+    position: fixed;
 
-    inset:0;
+    inset: 0;
 
-    background:rgba(0,0,0,.45);
+    background: rgba(0, 0, 0, .45);
 
-    opacity:0;
+    opacity: 0;
 
-    visibility:hidden;
+    visibility: hidden;
 
-    transition:.35s;
+    transition: .35s;
 
-    z-index:1500;
+    z-index: 1500;
 
 }
 
-.overlay.active{
+.overlay.active {
 
-    opacity:1;
+    opacity: 1;
 
-    visibility:visible;
+    visibility: visible;
 
 }
 
@@ -278,9 +278,9 @@
    BODY GAP
 =========================== */
 
-body{
+body {
 
-    padding-top:70px;
+    padding-top: 70px;
 
 }
 
@@ -289,17 +289,17 @@ body{
    MOBILE
 =========================== */
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-    .logo{
+    .logo {
 
-        font-size:19px;
+        font-size: 19px;
 
     }
 
-    .sidebar{
+    .sidebar {
 
-        width:280px;
+        width: 280px;
 
     }
 
@@ -309,14 +309,14 @@ body{
 Active Menu
 =========================== */
 
-.sidebar a.active{
+.sidebar a.active {
 
-    background:#2563eb;
+    background: #2563eb;
 
-    color:#fff;
+    color: #fff;
 
-    font-weight:600;
+    font-weight: 600;
 
-    border-radius:10px;
+    border-radius: 10px;
 
 }

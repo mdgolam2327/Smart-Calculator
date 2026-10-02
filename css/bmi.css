@@ -33,7 +33,7 @@
     border-radius: 15px;
 
     box-shadow:
-        0 4px 15px rgba(0,0,0,0.08);
+        0 4px 15px rgba(0, 0, 0, 0.08);
 
     text-align: center;
 
@@ -104,7 +104,7 @@
     text-align: center;
 
     box-shadow:
-        0 4px 15px rgba(0,0,0,0.08);
+        0 4px 15px rgba(0, 0, 0, 0.08);
 
 }
 
@@ -141,7 +141,7 @@
     border-radius: 15px;
 
     box-shadow:
-        0 4px 15px rgba(0,0,0,0.08);
+        0 4px 15px rgba(0, 0, 0, 0.08);
 
 }
 
@@ -337,11 +337,9 @@
 
     border-radius: 25px;
 
-    background: linear-gradient(
-        135deg,
-        #1f4db0,
-        #2a4fb5
-    );
+    background: linear-gradient(135deg,
+            #1f4db0,
+            #2a4fb5);
 
     color: rgb(17, 17, 15);
 
@@ -366,11 +364,9 @@
 
     border-radius: 30px;
 
-    background: linear-gradient(
-        135deg,
-        #224ca7ec,
-        #214ababc
-    );
+    background: linear-gradient(135deg,
+            #224ca7ec,
+            #214ababc);
 
     color: white;
 

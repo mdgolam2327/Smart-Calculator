@@ -32,9 +32,9 @@ function calculateFD() {
     let interestEarned =
         maturityAmount - principal;
 
-     document.getElementById("result").innerHTML =
+    document.getElementById("result").innerHTML =
 
-    `<div class="result-card">
+        `<div class="result-card">
         <div class="result-title">
             Deposit Amount
         </div>
@@ -92,7 +92,7 @@ function calculateFD() {
     </button>`;
 
     saveHistory(
-    `FD Calculator
+        `FD Calculator
     Deposit Amount: ₹${principal.toFixed(2)}
     Maturity Amount: ₹${maturityAmount.toFixed(2)}
     

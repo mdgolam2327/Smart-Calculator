@@ -11,11 +11,9 @@
 
     border-radius: 30px;
 
-    background: linear-gradient(
-        135deg,
-        #224ca7ec,
-        #214ababc
-    );
+    background: linear-gradient(135deg,
+            #224ca7ec,
+            #214ababc);
 
     color: white;
 
@@ -36,7 +34,7 @@
     transform: translateY(-2px);
 
     box-shadow:
-        0 8px 18px rgba(37,99,235,0.4);
+        0 8px 18px rgba(37, 99, 235, 0.4);
 }
 
 /* ===========================
@@ -52,62 +50,62 @@
     border-radius: 16px;
 
     box-shadow:
-        0 8px 20px rgba(0,0,0,.08);
+        0 8px 20px rgba(0, 0, 0, .08);
 
     margin-top: 20px;
 
 }
 
-.calculator-card label{
+.calculator-card label {
 
-    display:block;
+    display: block;
 
-    font-weight:bold;
+    font-weight: bold;
 
-    margin-bottom:8px;
+    margin-bottom: 8px;
 
-    color:#374151;
-
-}
-
-.calculator-card input{
-
-    margin-bottom:18px;
+    color: #374151;
 
 }
 
-.info-card{
+.calculator-card input {
 
-    background:#ffffff;
+    margin-bottom: 18px;
 
-    margin-top:30px;
+}
 
-    padding:20px;
+.info-card {
 
-    border-radius:16px;
+    background: #ffffff;
+
+    margin-top: 30px;
+
+    padding: 20px;
+
+    border-radius: 16px;
 
     box-shadow:
-        0 8px 20px rgba(0,0,0,.08);
+        0 8px 20px rgba(0, 0, 0, .08);
 
 }
 
-.info-card h3{
+.info-card h3 {
 
-    color:#2563eb;
+    color: #2563eb;
 
-    margin-bottom:12px;
+    margin-bottom: 12px;
 
-    text-align:center;
+    text-align: center;
 
 }
 
-.info-card p{
+.info-card p {
 
-    line-height:1.8;
+    line-height: 1.8;
 
-    color:#555;
+    color: #555;
 
-    text-align:justify;
+    text-align: justify;
 
 }
 
@@ -115,44 +113,44 @@
    RESULT CARD
 =========================== */
 
-.result-card{
+.result-card {
 
-    background:white;
+    background: white;
 
-    border-radius:16px;
+    border-radius: 16px;
 
-    padding:12px;
+    padding: 12px;
 
-    margin-top:15px;
+    margin-top: 15px;
 
-    text-align:center;
+    text-align: center;
 
     box-shadow:
-        0 8px 20px rgba(0,0,0,.08);
+        0 8px 20px rgba(0, 0, 0, .08);
 
-    animation:fadeUp .4s ease;
-
-}
-
-.result-title{
-
-    font-size:15px;
-
-    color:#6b7280;
-
-    margin-bottom:8px;
+    animation: fadeUp .4s ease;
 
 }
 
-.result-value{
+.result-title {
 
-    font-size:24px;
+    font-size: 15px;
 
-    font-weight:bold;
+    color: #6b7280;
 
-    color:#2563eb;
+    margin-bottom: 8px;
 
-    line-height:1.6;
+}
+
+.result-value {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: #2563eb;
+
+    line-height: 1.6;
 
 }
 
@@ -162,55 +160,55 @@
 
 .copy-btn,
 .share-btn,
-.pdf-btn{
+.pdf-btn {
 
-    width:100%;
+    width: 100%;
 
-    padding:14px;
+    padding: 14px;
 
-    border:none;
+    border: none;
 
-    border-radius:12px;
+    border-radius: 12px;
 
-    color:white;
+    color: white;
 
-    font-size:16px;
+    font-size: 16px;
 
-    font-weight:bold;
+    font-weight: bold;
 
-    cursor:pointer;
+    cursor: pointer;
 
-    margin-top:12px;
+    margin-top: 12px;
 
-    transition:.3s;
-
-}
-
-.copy-btn{
-
-    background:#16a34a;
+    transition: .3s;
 
 }
 
-.share-btn{
+.copy-btn {
 
-    background:#2563eb;
+    background: #16a34a;
 
 }
 
-.pdf-btn{
+.share-btn {
 
-    background:#dc2626;
+    background: #2563eb;
+
+}
+
+.pdf-btn {
+
+    background: #dc2626;
 
 }
 
 .copy-btn:hover,
 .share-btn:hover,
-.pdf-btn:hover{
+.pdf-btn:hover {
 
-    transform:translateY(-2px);
+    transform: translateY(-2px);
 
-    opacity:.95;
+    opacity: .95;
 
 }
 
@@ -222,33 +220,33 @@
 
 .dark-mode .info-card,
 
-.dark-mode .result-card{
+.dark-mode .result-card {
 
-    background:#2a2a2a;
-
-}
-
-.dark-mode .calculator-card label{
-
-    color:white;
+    background: #2a2a2a;
 
 }
 
-.dark-mode .info-card p{
+.dark-mode .calculator-card label {
 
-    color:#d1d5db;
-
-}
-
-.dark-mode .result-title{
-
-    color:#d1d5db;
+    color: white;
 
 }
 
-.dark-mode .result-value{
+.dark-mode .info-card p {
 
-    color:#60a5fa;
+    color: #d1d5db;
+
+}
+
+.dark-mode .result-title {
+
+    color: #d1d5db;
+
+}
+
+.dark-mode .result-value {
+
+    color: #60a5fa;
 
 }
 
@@ -256,21 +254,21 @@
    ANIMATION
 =========================== */
 
-@keyframes fadeUp{
+@keyframes fadeUp {
 
-    from{
+    from {
 
-        opacity:0;
+        opacity: 0;
 
-        transform:translateY(15px);
+        transform: translateY(15px);
 
     }
 
-    to{
+    to {
 
-        opacity:1;
+        opacity: 1;
 
-        transform:translateY(0);
+        transform: translateY(0);
 
     }
 
@@ -280,23 +278,23 @@
    MOBILE
 =========================== */
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-    .calculator-card{
+    .calculator-card {
 
-        padding:15px;
-
-    }
-
-    .result-value{
-
-        font-size:21px;
+        padding: 15px;
 
     }
 
-    .info-card{
+    .result-value {
 
-        padding:15px;
+        font-size: 21px;
+
+    }
+
+    .info-card {
+
+        padding: 15px;
 
     }
 

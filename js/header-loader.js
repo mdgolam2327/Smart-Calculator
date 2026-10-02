@@ -48,7 +48,7 @@
 
             console.error(
                 "Header Load Failed:",
-                
+
                 error
             );
 

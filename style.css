@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     background: #fff;
-    
+
 }
 
 .container {
@@ -17,17 +17,15 @@ body {
     background: white;
     padding: 20px;
     border-radius: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .08);
 }
 
 h1 {
     text-align: center;
 
-    background: linear-gradient(
-        135deg,
-        #03246a,
-        #052040
-    );
+    background: linear-gradient(135deg,
+            #03246a,
+            #052040);
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -49,11 +47,7 @@ p {
     width: 100%;
     border: none;
 
-    background: linear-gradient(
-        135deg,
-        #210866,
-        #1807cc
-    );
+    background: linear-gradient(135deg, #502c55, #1b2842bc);
 
     color: white;
 
@@ -72,7 +66,7 @@ p {
     align-items: center;
 
     box-shadow:
-        0 4px 10px rgba(0,0,0,0.1);
+        0 4px 10px rgba(0, 0, 0, 0.1);
 
     transition: all .3s ease;
 }
@@ -96,9 +90,9 @@ p {
 
     border-radius: 15px;
 
-    margin-top: 10px;
+    margin-top: 8px;
 
-    padding: 0 10px;
+    padding: 0 8px;
 
     box-shadow:
         0 4px 10px rgba(0, 0, 0, 0.619);
@@ -116,7 +110,7 @@ p {
 
     margin-top: 2px;
 
-    background: #ffffff;
+    background: #eee8e8;
 
     border: 1px solid #5275a2;
 
@@ -180,7 +174,7 @@ select {
     border-color: #2563eb;
 
     box-shadow:
-        0 0 0 4px rgba(37,99,235,.15);
+        0 0 0 4px rgba(37, 99, 235, .15);
 
 }
 
@@ -197,11 +191,9 @@ select {
 
     border-radius: 30px;
 
-    background: linear-gradient(
-        135deg,
-        #224ca7ec,
-        #214ababc
-    );
+    background: linear-gradient(135deg,
+            #224ca7ec,
+            #214ababc);
 
     color: white;
 
@@ -222,7 +214,7 @@ select {
     transform: translateY(-2px);
 
     box-shadow:
-        0 8px 18px rgba(37,99,235,0.4);
+        0 8px 18px rgba(37, 99, 235, 0.4);
 
 }
 
@@ -324,7 +316,8 @@ select {
     right: 0;
     bottom: 0;
 
-    background: #dc2626; /* OFF color */
+    background: #dc2626;
+    /* OFF color */
 
     border-radius: 50px;
 
@@ -367,15 +360,16 @@ select {
     font-weight: bold;
 }
 
-input:checked + .slider {
-    background: #16a34a; /* ON color */
+input:checked+.slider {
+    background: #16a34a;
+    /* ON color */
 }
 
-input:checked + .slider::before {
+input:checked+.slider::before {
     transform: translateX(34px);
 }
 
-input:checked + .slider::after {
+input:checked+.slider::after {
 
     content: "ON";
 
@@ -398,7 +392,7 @@ input:checked + .slider::after {
     background: #120c0c;
     color: rgb(244, 241, 241);
     border: none;
-    
+
 }
 
 .dark-mode .accordion-content {
@@ -511,7 +505,7 @@ button:focus {
     margin-top: 25px;
 
     box-shadow:
-        0 4px 10px rgba(0,0,0,.08);
+        0 4px 10px rgba(0, 0, 0, .08);
 
 }
 

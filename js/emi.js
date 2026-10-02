@@ -18,7 +18,7 @@ function calculateEMI() {
         isNaN(years)
     ) {
         document.getElementById("result").innerHTML =
-        "Please enter All values";
+            "Please enter All values";
         return;
     }
 
@@ -37,7 +37,7 @@ function calculateEMI() {
 
     document.getElementById("result").innerHTML =
 
-    `<div class="result-card">
+        `<div class="result-card">
         <div class="result-title">
             Monthly EMI
         </div>
@@ -104,7 +104,7 @@ function calculateEMI() {
     </button>`;
 
     saveHistory(
-    `EMI Calculator
+        `EMI Calculator
 
     Monthly EMI: ₹${emi.toFixed(2)}
     Total Payment: ₹${totalPayment.toFixed(2)}

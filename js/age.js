@@ -6,7 +6,7 @@ function calculateAge() {
 
         document.getElementById("result").innerHTML =
 
-        `<div class="result-card">
+            `<div class="result-card">
 
             <div class="result-title">
                 ⚠️ Error
@@ -109,14 +109,14 @@ function calculateAge() {
             (1000 * 60 * 60 * 24)
         );
 
-        let birthdayMessage = "";
+    let birthdayMessage = "";
 
-        if (
-            today.getDate() === birthDate.getDate() &&
-            today.getMonth() === birthDate.getMonth()
-        ) {
+    if (
+        today.getDate() === birthDate.getDate() &&
+        today.getMonth() === birthDate.getMonth()
+    ) {
 
-            birthdayMessage =
+        birthdayMessage =
 
             `<div class="birthday-card">
 
@@ -128,11 +128,11 @@ function calculateAge() {
 
             </div>`;
 
-        }
+    }
 
     document.getElementById("result").innerHTML =
 
-    `<div class="result-card">
+        `<div class="result-card">
 
         <div class="result-title">
             🎂 Your Age
@@ -231,7 +231,7 @@ function calculateAge() {
     </button>`;
 
     saveHistory(
-        
+
         `Age Calculator
         
         Age:

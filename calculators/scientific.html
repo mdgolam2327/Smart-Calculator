@@ -3,22 +3,21 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>
-    Scientific Calculator | SmartCalc Hub
-</title>
+    <title>
+        Scientific Calculator | SmartCalc Hub
+    </title>
 
-<link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
 
-<link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css">
 
-<link rel="stylesheet" href="../css/scientific.css">
+    <link rel="stylesheet" href="../css/scientific.css">
 
-<link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/header.css">
 
 </head>
 
@@ -26,174 +25,72 @@ content="width=device-width, initial-scale=1.0">
 
     <div id="header"></div>
 
-<div class="container">
+    <div class="container">
 
-    <h1>
-        🧮 Scientific Calculator
-    </h1>
+        <h1>
+            🧮 Scientific Calculator
+        </h1>
 
-    <p>
-        This is an online javascript scientific calculator. You can click the buttons or type to perform calculations as you would on a physical calculator.
-    </p>
-    
-    <div class="calculator">
+        <p>
+            This is an online javascript scientific calculator. You can click the buttons or type to perform
+            calculations as you would on a physical calculator.
+        </p>
 
-        <!-- ========================= -->
-        <!-- Display -->
-        <!-- ========================= -->
+        <div class="calculator">
 
-        <div class="calc-screen">
+            <!-- ========================= -->
+            <!-- Display -->
+            <!-- ========================= -->
 
-            <div class="status-bar">
+            <div class="calc-screen">
 
-                <span id="angleMode">DEG</span>
+                <div class="status-bar">
 
-                <span id="memoryStatus"></span>
+                    <span id="angleMode">DEG</span>
 
-                <span id="ansStatus"></span>
+                    <span id="memoryStatus"></span>
 
-            </div>
+                    <span id="ansStatus"></span>
 
-            <input
-                type="text"
-                id="display"
-                placeholder="0">
+                </div>
 
-        </div>
-
-        <!-- ========================= -->
-        <!-- Top Controls -->
-        <!-- ========================= -->
-
-        <div class="top-controls">
-
-            <button id="shiftBtn" data-action="shift">SHIFT</button>
-
-            <button data-action="mc">MC</button>
-
-            <button data-action="mr">MR</button>
-
-            <button data-action="mplus">M+</button>
-
-            <button data-action="mminus">M−</button>
-
-            <button class="danger-btn"
-            data-action="clear">
-                AC
-            </button>
-
-            <button class="danger-btn"
-            data-action="delete">
-                DEL
-            </button>
-
-            <button data-value="(">(</button>
-
-            <button data-value=")">)</button>
-
-            <button id="degRadBtn"
-            data-action="angle">
-
-                DEG
-
-            </button>
-
-            <button data-action="ans">
-
-                Ans
-
-            </button>
-
-            <button data-value="EXP">
-
-                EXP
-
-            </button>
-
-        </div>
-
-        <!-- ========================= -->
-        <!-- Bottom -->
-        <!-- ========================= -->
-
-        <div class="calc-body">
-
-            <!-- Scientific -->
-
-            <div class="scientific-panel">
-
-                <button id="nCrBtn" onclick="insertNCR()">nCr</button>
-  
-                <button id="sinBtn" data-func="sin">sin</button>
-
-                <button id="cosBtn" data-func="cos">cos</button>
-
-                <button id="tanBtn" data-func="tan">tan</button>
-
-                <button id="logBtn" data-func="log">log</button>
-
-                <button id="lnBtn" data-func="ln">ln</button>
-
-                <button id="sqrtBtn" data-func="sqrt">√</button>
-
-                <button data-action="square">x²</button>
-
-                <button data-action="cube">x³</button>
-
-                <button data-value="^">xʸ</button>
-
-                <button data-action="inverse">x⁻¹</button>
-
-                <button data-value="%">%</button>
-
-                <button data-value="π">π</button>
-
-                <button data-value="e">e</button>
-
-                <button data-value="!">x!</button>
+                <input type="text" id="display" placeholder="0">
 
             </div>
 
-            <!-- Number Pad -->
+            <!-- ========================= -->
+            <!-- Top Controls -->
+            <!-- ========================= -->
 
-            <div class="number-panel">
+            <div class="top-controls">
 
-                <button data-value="7">7</button>
+                <button id="shiftBtn" data-action="shift">SHIFT</button>
 
-                <button data-value="8">8</button>
+                <button data-action="mc">MC</button>
 
-                <button data-value="9">9</button>
+                <button data-action="mr">MR</button>
 
-                <button class="operator-btn"
-                data-value="/">
-                    ÷
+                <button data-action="mplus">M+</button>
+
+                <button data-action="mminus">M−</button>
+
+                <button class="danger-btn" data-action="clear">
+                    AC
                 </button>
 
-                <button data-value="4">4</button>
-
-                <button data-value="5">5</button>
-
-                <button data-value="6">6</button>
-
-                <button class="operator-btn"
-                data-value="*">
-                    ×
+                <button class="danger-btn" data-action="delete">
+                    DEL
                 </button>
 
-                <button data-value="1">1</button>
+                <button data-value="(">(</button>
 
-                <button data-value="2">2</button>
+                <button data-value=")">)</button>
 
-                <button data-value="3">3</button>
+                <button id="degRadBtn" data-action="angle">
 
-                <button class="operator-btn"
-                data-value="-">
-                    −
+                    DEG
+
                 </button>
-
-                <button data-value="0">0</button>
-
-                <button data-value=".">.</button>
 
                 <button data-action="ans">
 
@@ -201,70 +98,161 @@ content="width=device-width, initial-scale=1.0">
 
                 </button>
 
-                <button class="operator-btn"
-                data-value="+">
+                <button data-value="EXP">
 
-                    +
-
-                </button>
-
-                <button
-                id="equalBtn"
-                class="equal-btn">
-
-                    =
+                    EXP
 
                 </button>
 
             </div>
 
+            <!-- ========================= -->
+            <!-- Bottom -->
+            <!-- ========================= -->
+
+            <div class="calc-body">
+
+                <!-- Scientific -->
+
+                <div class="scientific-panel">
+
+                    <button id="nCrBtn" onclick="insertNCR()">nCr</button>
+
+                    <button id="sinBtn" data-func="sin">sin</button>
+
+                    <button id="cosBtn" data-func="cos">cos</button>
+
+                    <button id="tanBtn" data-func="tan">tan</button>
+
+                    <button id="logBtn" data-func="log">log</button>
+
+                    <button id="lnBtn" data-func="ln">ln</button>
+
+                    <button id="sqrtBtn" data-func="sqrt">√</button>
+
+                    <button data-action="square">x²</button>
+
+                    <button data-action="cube">x³</button>
+
+                    <button data-value="^">xʸ</button>
+
+                    <button data-action="inverse">x⁻¹</button>
+
+                    <button data-value="%">%</button>
+
+                    <button data-value="π">π</button>
+
+                    <button data-value="e">e</button>
+
+                    <button data-value="!">x!</button>
+
+                </div>
+
+                <!-- Number Pad -->
+
+                <div class="number-panel">
+
+                    <button data-value="7">7</button>
+
+                    <button data-value="8">8</button>
+
+                    <button data-value="9">9</button>
+
+                    <button class="operator-btn" data-value="/">
+                        ÷
+                    </button>
+
+                    <button data-value="4">4</button>
+
+                    <button data-value="5">5</button>
+
+                    <button data-value="6">6</button>
+
+                    <button class="operator-btn" data-value="*">
+                        ×
+                    </button>
+
+                    <button data-value="1">1</button>
+
+                    <button data-value="2">2</button>
+
+                    <button data-value="3">3</button>
+
+                    <button class="operator-btn" data-value="-">
+                        −
+                    </button>
+
+                    <button data-value="0">0</button>
+
+                    <button data-value=".">.</button>
+
+                    <button data-action="ans">
+
+                        Ans
+
+                    </button>
+
+                    <button class="operator-btn" data-value="+">
+
+                        +
+
+                    </button>
+
+                    <button id="equalBtn" class="equal-btn">
+
+                        =
+
+                    </button>
+
+                </div>
+
+            </div>
+
         </div>
 
+        <div id="result"></div>
+
+        <!-- Keyboard Help -->
+
+        <div class="keyboard-help">
+
+            <h3>
+                ⌨ Keyboard Shortcuts
+            </h3>
+
+            <p>
+
+                Enter = Calculate
+
+            </p>
+
+            <p>
+
+                Backspace = Delete
+
+            </p>
+
+            <p>
+
+                Delete = Clear
+
+            </p>
+
+            <p>
+
+                Esc = AC
+
+            </p>
+
+        </div>
+
+        <div id="result"></div>
+
     </div>
 
-    <div id="result"></div>
+    <br><br><br><br>
 
-    <!-- Keyboard Help -->
-
-    <div class="keyboard-help">
-
-        <h3>
-            ⌨ Keyboard Shortcuts
-        </h3>
-
-        <p>
-
-            Enter = Calculate
-
-        </p>
-
-        <p>
-
-            Backspace = Delete
-
-        </p>
-
-        <p>
-
-            Delete = Clear
-
-        </p>
-
-        <p>
-
-            Esc = AC
-
-        </p>
-
-    </div>
-
-    <div id="result"></div>
-
-</div>
-
-<br><br><br><br>
-
-<div>
+    <div>
 
         <footer>
 
@@ -291,9 +279,9 @@ content="width=device-width, initial-scale=1.0">
             <a href="../disclaimer.html">Disclaimer</a>
 
         </footer>
-    
+
     </div>
-    
+
     <script src="../script.js"></script>
 
     <script src="../js/scientific.js"></script>
@@ -303,4 +291,5 @@ content="width=device-width, initial-scale=1.0">
     <script src="../js/header-loader.js"></script>
 
 </body>
+
 </html>

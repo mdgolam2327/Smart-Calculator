@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Area Calculator - Calculate Area of Shapes | Smart-Calculator</title>
+
+    <meta name="description"
+        content="Calculate the area of square, rectangle, triangle, circle, parallelogram, trapezoid, rhombus, kite, ellipse, sector and regular polygon with step-by-step formulas and explanations.">
+
+    <link rel="canonical" href="https://smartcalc-hub.github.io/smartcalc-hub/calculators/area.html">
+
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+    <!-- Existing header CSS -->
+    <link rel="stylesheet" href="../css/header.css">
+
+    <!-- Area Calculator CSS -->
+    <link rel="stylesheet" href="../css/area.css">
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+
+    <div id="header"></div>
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+    <!-- <div id="header-container"></div> -->
+
+
+    <main class="area-page">
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+        <section class="area-hero">
+
+            <div class="area-hero-content">
+
+                <div class="area-hero-icon">
+                    △
+                </div>
+
+                <div>
+                    <h1>Area Calculator</h1>
+
+                    <p>
+                        Calculate the area of different geometric shapes
+                        with formulas, examples and step-by-step explanations.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CALCULATOR
+        ====================================================== -->
+        <section class="area-calculator-section">
+
+            <div class="area-calculator-card">
+
+
+                <!-- LEFT: INPUTS -->
+                <div class="area-input-panel">
+
+                    <h2>Calculate Area</h2>
+
+                    <p class="section-description">
+                        Select a shape and enter the required measurements.
+                    </p>
+
+
+                    <!-- Shape -->
+                    <div class="input-group">
+
+                        <label for="shapeSelect">
+                            Select Shape
+                        </label>
+
+                        <select id="shapeSelect">
+
+                            <option value="square">
+                                Square
+                            </option>
+
+                            <option value="rectangle">
+                                Rectangle
+                            </option>
+
+                            <option value="triangle">
+                                Triangle
+                            </option>
+
+                            <option value="circle">
+                                Circle
+                            </option>
+
+                            <option value="parallelogram">
+                                Parallelogram
+                            </option>
+
+                            <option value="trapezoid">
+                                Trapezoid
+                            </option>
+
+                            <option value="rhombus">
+                                Rhombus
+                            </option>
+
+                            <option value="kite">
+                                Kite
+                            </option>
+
+                            <option value="ellipse">
+                                Ellipse
+                            </option>
+
+                            <option value="sector">
+                                Sector
+                            </option>
+
+                            <option value="polygon">
+                                Regular Polygon
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Unit -->
+                    <div class="input-group">
+
+                        <label for="unitSelect">
+                            Unit
+                        </label>
+
+                        <select id="unitSelect">
+
+                            <option value="mm">
+                                Millimeter (mm)
+                            </option>
+
+                            <option value="cm">
+                                Centimeter (cm)
+                            </option>
+
+                            <option value="m" selected>
+                                Meter (m)
+                            </option>
+
+                            <option value="km">
+                                Kilometer (km)
+                            </option>
+
+                            <option value="in">
+                                Inch (in)
+                            </option>
+
+                            <option value="ft">
+                                Feet (ft)
+                            </option>
+
+                            <option value="yd">
+                                Yard (yd)
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Dynamic Inputs -->
+                    <div id="shapeInputs">
+
+                        <!-- JavaScript will generate inputs -->
+
+                    </div>
+
+
+                    <!-- Calculate -->
+                    <button type="button" id="calculateAreaBtn" class="calculate-area-btn">
+                        Calculate Area
+                    </button>
+
+
+                    <!-- Reset -->
+                    <button type="button" id="resetAreaBtn" class="reset-area-btn">
+                        Reset
+                    </button>
+
+                </div>
+
+
+
+                <!-- MIDDLE: DIAGRAM -->
+                <div class="area-diagram-panel">
+
+                    <h2>Shape Diagram</h2>
+
+                    <div id="shapeDiagram" class="shape-diagram">
+
+                        <!-- JavaScript generates diagram -->
+
+                    </div>
+
+                    <div id="diagramExplanation" class="diagram-explanation">
+                        Select a shape to see its diagram.
+                    </div>
+
+                </div>
+
+
+
+                <!-- RIGHT: RESULT -->
+                <div class="area-result-panel">
+
+                    <div class="result-header">
+
+                        <span class="result-icon">
+                            ✓
+                        </span>
+
+                        <h2>Area Result</h2>
+
+                    </div>
+
+
+                    <div id="areaResult" class="area-result-value">
+                        —
+                    </div>
+
+
+                    <div class="calculation-box">
+
+                        <h3>Calculation Steps</h3>
+
+                        <div id="calculationSteps">
+
+                            Enter the required values and
+                            click "Calculate Area".
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="resultMessage" class="result-message">
+                        Your calculated area will appear here.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CURRENT SHAPE EXPLANATION
+        ====================================================== -->
+        <section class="shape-explanation-section">
+
+            <div class="content-container">
+
+                <h2 id="currentShapeTitle">
+                    How to Calculate Area
+                </h2>
+
+                <div id="currentShapeExplanation" class="current-shape-explanation">
+
+                    Select a shape above to see its formula,
+                    variables and calculation method.
+
+                </div>
+
+            </div>
+
+        </section>
+        
+
+        <!-- =====================================================
+             ALL SHAPES
+        ====================================================== -->
+        <section class="all-shapes-section">
+
+            <div class="content-container">
+
+                <h2>All Supported Shapes</h2>
+
+                <p class="section-intro">
+                    Choose a shape to see the required measurements,
+                    formula and detailed explanation.
+                </p>
+
+
+                <div class="shape-grid">
+
+
+                    <!-- Square -->
+                    <button class="shape-card" data-shape="square">
+
+                        <div class="shape-card-icon">
+                            □
+                        </div>
+
+                        <h3>Square</h3>
+
+                        <p>
+                            One side
+                        </p>
+
+                        <strong>
+                            A = s²
+                        </strong>
+
+                    </button>
+
+
+                    <!-- Rectangle -->
+                    <button class="shape-card" data-shape="rectangle">
+
+                        <div class="shape-card-icon">
+                            ▭
+                        </div>
+
+                        <h3>Rectangle</h3>
+
+                        <p>
+                            Length & Width
+                        </p>
+
+                        <strong>
+                            A = l × w
+                        </strong>
+
+                    </button>
+
+
+                    <!-- Triangle -->
+                    <button class="shape-card" data-shape="triangle">
+
+                        <div class="shape-card-icon">
+                            △
+                        </div>
+
+                        <h3>Triangle</h3>
+
+                        <p>
+                            Base & Height
+                        </p>
+
+                        <strong>
+                            A = ½bh
+                        </strong>
+
+                    </button>
+
+
+                    <!-- Circle -->
+                    <button class="shape-card" data-shape="circle">
+
+                        <div class="shape-card-icon">
+                            ○
+                        </div>
+
+                        <h3>Circle</h3>
+
+                        <p>
+                            Radius
+                        </p>
+
+                        <strong>
+                            A = πr²
+                        </strong>
+
+                    </button>
+
+
+                    <!-- Parallelogram -->
+                    <button class="shape-card" data-shape="parallelogram">
+
+                        <div class="shape-card-icon">
+                            ▱
+                        </div>
+
+                        <h3>Parallelogram</h3>
+
+                        <p>
+                            Base & Height
+                        </p>
+
+                        <strong>
+                            A = bh
+                        </strong>
+
+                    </button>
+
+
+                    <!-- Trapezoid -->
+                    <button class="shape-card" data-shape="trapezoid">
+
+                        <div class="shape-card-icon">
+                            ⏢
+                        </div>
+
+                        <h3>Trapezoid</h3>
+
+                        <p>
+                            Two Bases & Height
+                        </p>
+
+                        <strong>
+                            A = ½(a+b)h
+                        </strong>
+
+                    </button>
+
+
+                    <!-- Rhombus -->
+                    <button class="shape-card" data-shape="rhombus">
+
+                        <div class="shape-card-icon">
+                            ◇
+                        </div>
+
+                        <h3>Rhombus</h3>
+
+                        <p>
+                            Two Diagonals
+                        </p>
+
+                        <strong>
+                            A = ½d₁d₂
+                        </strong>
+
+                    </button>
+
+
+                    <!-- Kite -->
+                    <button class="shape-card" data-shape="kite">
+
+                        <div class="shape-card-icon">
+                            ◇
+                        </div>
+
+                        <h3>Kite</h3>
+
+                        <p>
+                            Two Diagonals
+                        </p>
+
+                        <strong>
+                            A = ½d₁d₂
+                        </strong>
+
+                    </button>
+
+
+                    <!-- Ellipse -->
+                    <button class="shape-card" data-shape="ellipse">
+
+                        <div class="shape-card-icon">
+                            ⬭
+                        </div>
+
+                        <h3>Ellipse</h3>
+
+                        <p>
+                            Semi-major & Semi-minor
+                        </p>
+
+                        <strong>
+                            A = πab
+                        </strong>
+
+                    </button>
+
+
+                    <!-- Sector -->
+                    <button class="shape-card" data-shape="sector">
+
+                        <div class="shape-card-icon">
+                            ◔
+                        </div>
+
+                        <h3>Sector</h3>
+
+                        <p>
+                            Radius & Angle
+                        </p>
+
+                        <strong>
+                            A = θ/360 × πr²
+                        </strong </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <br><br><br><br>
+
+    <div>
+
+        <footer>
+
+            © 2026 SmartCalc Hub
+
+            <br>
+
+            Fast • Accurate • Free
+
+            <br><br>
+
+            <a href="../about.html">About</a>
+            /
+
+            <a href="../contact.html">Contact</a>
+            /
+
+            <a href="../privacy.html">Privacy Policy</a>
+            /
+
+            <a href="../terms.html">Terms & Conditions</a>
+            /
+
+            <a href="../disclaimer.html">Disclaimer</a>
+
+        </footer>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="../script.js"></script>
+
+    <script src="../js/header.js"></script>
+
+    <script src="../js/area.js"></script>
+
+    <script src="../js/header-loader.js"></script>
+
+</body>
+
+</html>

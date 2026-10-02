@@ -19,7 +19,7 @@ function calculateGST() {
 
     document.getElementById("result").innerHTML =
 
-    `<div class="result-card">
+        `<div class="result-card">
         <div class="result-title">
             GST Amount
         </div>
@@ -68,7 +68,7 @@ function calculateGST() {
     </button>`;
 
     saveHistory(
-    `GST Calculator
+        `GST Calculator
 
     GST Amount: ₹${gstAmount.toFixed(2)}
     Total Amount: ₹${totalAmount.toFixed(2)}
