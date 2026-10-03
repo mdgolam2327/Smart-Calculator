@@ -1,0 +1,1215 @@
+/* =========================================================
+   BINARY CALCULATOR
+   SmartCalc Hub
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.binary-page {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 30px 20px 70px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   COMMON
+   ========================================================= */
+
+.binary-page * {
+    box-sizing: border-box;
+}
+
+.binary-page button,
+.binary-page input,
+.binary-page select {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.binary-intro {
+    max-width: 850px;
+    margin: 10px auto 45px;
+    text-align: center;
+}
+
+.binary-intro h1 {
+    margin: 0 0 16px;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.binary-intro p {
+    margin: 8px 0;
+    line-height: 1.75;
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+    max-width: 850px;
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+    line-height: 1.3;
+}
+
+.section-heading p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   GENERAL INFORMATION
+   ========================================================= */
+
+.binary-information {
+    margin-bottom: 60px;
+}
+
+.information-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.information-card {
+    padding: 24px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.information-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.information-card p {
+    margin: 8px 0;
+
+    line-height: 1.75;
+}
+
+.information-card ul {
+    margin: 10px 0 0;
+    padding-left: 22px;
+}
+
+.information-card li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FORMULA BOX
+   ========================================================= */
+
+.formula-box {
+    margin-top: 15px;
+    padding: 15px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+
+    background: #f8fafc;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+
+    text-align: center;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   CALCULATOR SECTION
+   ========================================================= */
+
+.binary-calculator-section {
+    width: 100%;
+    margin-bottom: 65px;
+}
+
+
+/* =========================================================
+   SELECTOR CARD
+   ========================================================= */
+
+.calculator-selector-card {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto 25px;
+
+    padding: 26px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   INPUT GROUP
+   ========================================================= */
+
+.input-group {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.input-group:last-child {
+    margin-bottom: 0;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: #111827;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================================
+   WORKSPACE
+   ========================================================= */
+
+.calculator-workspace {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   WORKSPACE PLACEHOLDER
+   ========================================================= */
+
+.workspace-placeholder {
+    padding: 45px 25px;
+
+    border: 1px dashed #cbd5e1;
+    border-radius: 15px;
+
+    background: #f8fafc;
+
+    text-align: center;
+}
+
+.placeholder-icon {
+    margin-bottom: 12px;
+
+    font-size: 2.5rem;
+}
+
+.workspace-placeholder h3 {
+    margin: 0 0 8px;
+
+    font-size: 1.2rem;
+}
+
+.workspace-placeholder p {
+    margin: 0;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DYNAMIC CALCULATOR CARD
+   ========================================================= */
+
+.dynamic-calculator-card {
+    width: 100%;
+
+    padding: 28px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.dynamic-calculator-card h3 {
+    margin: 0 0 22px;
+
+    text-align: center;
+
+    font-size: 1.35rem;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   CALCULATE BUTTON
+   ========================================================= */
+
+.calculate-btn {
+    display: block;
+
+    width: 100%;
+
+    min-height: 48px;
+
+    margin-top: 12px;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.15s ease;
+}
+
+.calculate-btn:hover {
+    opacity: 0.92;
+}
+
+.calculate-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   BINARY INPUT
+   ========================================================= */
+
+.binary-input {
+    font-family:
+        "Courier New",
+        monospace !important;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   RESULT SECTION
+   ========================================================= */
+
+.result-section {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 35px auto 0;
+}
+
+
+/* =========================================================
+   RESULT
+   ========================================================= */
+
+.calculator-result {
+    width: 100%;
+
+    padding: 25px;
+
+    border: 1px solid #dbeafe;
+    border-radius: 14px;
+
+    background: #eff6ff;
+
+    text-align: center;
+
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+}
+
+.calculator-result .result-title {
+    margin-bottom: 8px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.calculator-result .result-value {
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 1.8rem;
+    font-weight: 700;
+
+    word-break: break-word;
+}
+
+.calculator-result .result-description {
+    margin-top: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESULT TABLE
+   ========================================================= */
+
+.result-table-wrapper {
+    width: 100%;
+
+    margin-top: 18px;
+
+    overflow-x: auto;
+}
+
+.result-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: #ffffff;
+}
+
+.result-table th,
+.result-table td {
+    padding: 10px 12px;
+
+    border: 1px solid #dbe3ec;
+
+    text-align: center;
+}
+
+.result-table th {
+    font-weight: 600;
+
+    background: #f1f5f9;
+}
+
+
+/* =========================================================
+   SHARE BUTTON
+   ========================================================= */
+
+.share-btn {
+    display: block;
+
+    width: 100%;
+
+    min-height: 47px;
+
+    margin-top: 16px;
+
+    padding: 11px 18px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #16a34a;
+    color: #ffffff;
+
+    font-size: 0.98rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.15s ease;
+}
+
+.share-btn:hover {
+    opacity: 0.9;
+}
+
+.share-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   CALCULATION EXPLANATION
+   ========================================================= */
+
+.calculation-explanation {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 55px auto 0;
+}
+
+.explanation-content {
+    width: 100%;
+}
+
+.explanation-card {
+    margin-bottom: 20px;
+
+    padding: 25px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.explanation-card:last-child {
+    margin-bottom: 0;
+}
+
+.explanation-card h3 {
+    margin: 0 0 13px;
+
+    font-size: 1.2rem;
+}
+
+.explanation-card p {
+    margin: 8px 0;
+
+    line-height: 1.75;
+}
+
+.explanation-card ul {
+    margin: 12px 0;
+    padding-left: 22px;
+}
+
+.explanation-card li {
+    margin-bottom: 8px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   STEP-BY-STEP CALCULATION
+   ========================================================= */
+
+.calculation-steps {
+    margin-top: 18px;
+
+    padding: 20px;
+
+    border-left: 4px solid #2563eb;
+    border-radius: 9px;
+
+    background: #f8fafc;
+}
+
+.calculation-steps-title {
+    margin-bottom: 15px;
+
+    font-weight: 700;
+}
+
+.calculation-step {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-bottom: 12px;
+}
+
+.calculation-step:last-child {
+    margin-bottom: 0;
+}
+
+.step-number {
+    display: flex;
+
+    flex: 0 0 28px;
+
+    width: 28px;
+    height: 28px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.step-text {
+    flex: 1;
+
+    line-height: 1.65;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   BINARY EXPRESSION
+   ========================================================= */
+
+.binary-expression {
+    margin: 15px 0;
+
+    padding: 15px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+
+    background: #f8fafc;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+    text-align: center;
+
+    overflow-x: auto;
+
+    white-space: pre-wrap;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+
+.calculation-error {
+    margin-top: 12px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    font-size: 0.9rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   INVALID INPUT
+   ========================================================= */
+
+.input-error {
+    border-color: #dc2626 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(220, 38, 38, 0.10) !important;
+}
+
+.validation-message {
+    margin-top: 6px;
+
+    color: #dc2626;
+
+    font-size: 0.84rem;
+}
+
+
+/* =========================================================
+   HISTORY
+   ========================================================= */
+
+.binary-history-section {
+    margin-top: 65px;
+}
+
+.history-box {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+.history-item {
+    margin-bottom: 12px;
+
+    padding: 16px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+
+    overflow-wrap: anywhere;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.clear-history-btn {
+    display: block;
+
+    width: 100%;
+    max-width: 900px;
+
+    min-height: 45px;
+
+    margin: 18px auto 0;
+
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #dc2626;
+    color: #ffffff;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s ease;
+}
+
+.clear-history-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.binary-faq-section {
+    margin-top: 65px;
+}
+
+.faq-list {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 12px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+.faq-question {
+    position: relative;
+
+    width: 100%;
+
+    padding: 17px 50px 17px 18px;
+
+    border: none;
+
+    background: transparent;
+
+    color: inherit;
+
+    text-align: left;
+
+    font-size: 0.98rem;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.faq-question::after {
+    content: "+";
+
+    position: absolute;
+
+    right: 18px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 1.35rem;
+    font-weight: 400;
+}
+
+.faq-item.active .faq-question::after {
+    content: "−";
+}
+
+.faq-answer {
+    display: none;
+
+    padding: 0 18px 18px;
+
+    line-height: 1.75;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    margin-top: 30px;
+
+    padding: 25px 15px;
+
+    text-align: center;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+body.dark-mode .information-card,
+body.dark-mode .calculator-selector-card,
+body.dark-mode .dynamic-calculator-card,
+body.dark-mode .explanation-card,
+body.dark-mode .history-item,
+body.dark-mode .faq-item {
+    background: #1e1e1e;
+
+    border-color: #3a3a3a;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+body.dark-mode .workspace-placeholder {
+    background: #181818;
+
+    border-color: #444;
+}
+
+
+body.dark-mode .formula-box,
+body.dark-mode .binary-expression,
+body.dark-mode .calculation-steps {
+    background: #181818;
+
+    border-color: #3a3a3a;
+}
+
+
+body.dark-mode .input-group input,
+body.dark-mode .input-group select {
+    background: #121212;
+
+    color: #f5f5f5;
+
+    border-color: #444;
+}
+
+
+body.dark-mode .input-group input::placeholder {
+    color: #888;
+}
+
+
+body.dark-mode .calculator-result {
+    background: #172033;
+
+    border-color: #29466e;
+
+    color: #f5f5f5;
+}
+
+
+body.dark-mode .result-table {
+    background: #1e1e1e;
+}
+
+
+body.dark-mode .result-table th,
+body.dark-mode .result-table td {
+    border-color: #3a3a3a;
+}
+
+
+body.dark-mode .result-table th {
+    background: #252525;
+}
+
+
+body.dark-mode .calculation-error {
+    background: #2a1717;
+
+    border-color: #5f2929;
+
+    color: #fca5a5;
+}
+
+
+body.dark-mode .faq-question {
+    color: #f5f5f5;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .binary-page {
+        padding: 25px 16px 60px;
+    }
+
+    .binary-intro h1 {
+        font-size: 2.2rem;
+    }
+
+    .information-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator-selector-card,
+    .dynamic-calculator-card {
+        padding: 24px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .binary-page {
+        padding: 20px 12px 50px;
+    }
+
+
+    .binary-intro {
+        margin-bottom: 35px;
+    }
+
+
+    .binary-intro h1 {
+        font-size: 1.85rem;
+    }
+
+
+    .binary-intro p {
+        font-size: 0.92rem;
+        line-height: 1.65;
+    }
+
+
+    .section-heading {
+        margin-bottom: 22px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 1.45rem;
+    }
+
+
+    .section-heading p {
+        font-size: 0.9rem;
+    }
+
+
+    .information-grid {
+        gap: 14px;
+    }
+
+
+    .information-card {
+        padding: 19px;
+    }
+
+
+    .information-card h3 {
+        font-size: 1.08rem;
+    }
+
+
+    .information-card p,
+    .information-card li {
+        font-size: 0.9rem;
+    }
+
+
+    .calculator-selector-card {
+        padding: 19px;
+
+        border-radius: 12px;
+    }
+
+
+    .dynamic-calculator-card {
+        padding: 19px;
+
+        border-radius: 12px;
+    }
+
+
+    .dynamic-calculator-card h3 {
+        font-size: 1.15rem;
+    }
+
+
+    .input-group label {
+        font-size: 0.9rem;
+    }
+
+
+    .input-group input,
+    .input-group select {
+        min-height: 46px;
+
+        font-size: 0.94rem;
+    }
+
+
+    .calculate-btn {
+        min-height: 46px;
+
+        font-size: 0.94rem;
+    }
+
+
+    .workspace-placeholder {
+        padding: 35px 18px;
+    }
+
+
+    .placeholder-icon {
+        font-size: 2.1rem;
+    }
+
+
+    .calculator-result {
+        padding: 19px;
+    }
+
+
+    .calculator-result .result-value {
+        font-size: 1.45rem;
+    }
+
+
+    .share-btn {
+        min-height: 45px;
+
+        font-size: 0.93rem;
+    }
+
+
+    .calculation-explanation {
+        margin-top: 42px;
+    }
+
+
+    .explanation-card {
+        padding: 19px;
+    }
+
+
+    .explanation-card h3 {
+        font-size: 1.05rem;
+    }
+
+
+    .explanation-card p,
+    .explanation-card li {
+        font-size: 0.9rem;
+    }
+
+
+    .calculation-steps {
+        padding: 15px;
+    }
+
+
+    .calculation-step {
+        gap: 9px;
+
+        font-size: 0.89rem;
+    }
+
+
+    .step-number {
+        flex: 0 0 25px;
+
+        width: 25px;
+        height: 25px;
+
+        font-size: 0.72rem;
+    }
+
+
+    .binary-expression {
+        padding: 12px;
+
+        font-size: 0.86rem;
+    }
+
+
+    .history-item {
+        padding: 14px;
+
+        font-size: 0.87rem;
+    }
+
+
+    .faq-question {
+        padding: 15px 44px 15px 15px;
+
+        font-size: 0.91rem;
+    }
+
+
+    .faq-answer {
+        padding: 0 15px 15px;
+
+        font-size: 0.89rem;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .binary-page {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+
+    .binary-intro h1 {
+        font-size: 1.65rem;
+    }
+
+
+    .section-heading h2 {
+        font-size: 1.3rem;
+    }
+
+
+    .calculator-selector-card,
+    .dynamic-calculator-card {
+        padding: 16px;
+    }
+
+
+    .calculator-result .result-value {
+        font-size: 1.25rem;
+    }
+
+}

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Binary Calculator for number system conversion, binary arithmetic, bitwise operations, 1's complement and 2's complement with step-by-step explanations.">
+
+    <meta name="keywords"
+        content="binary calculator, binary converter, binary to decimal, decimal to binary, binary arithmetic, binary addition, binary subtraction, binary multiplication, binary division, bitwise calculator, binary complement">
+
+    <meta name="author" content="SmartCalc Hub">
+
+    <title>
+        Binary Calculator - SmartCalc Hub
+    </title>
+
+
+    <!-- =========================================
+         FAVICON
+    ========================================== -->
+
+    <link rel="canonical" href="https://smartcalc-hub.github.io/smartcalc-hub/calculators/binary.html">
+
+
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+
+    <!-- =========================================
+         MAIN WEBSITE CSS
+    ========================================== -->
+
+    <link rel="stylesheet" href="../style.css">
+
+
+    <!-- =========================================
+         HEADER CSS
+    ========================================== -->
+
+    <link rel="stylesheet" href="../css/header.css">
+
+
+    <!-- =========================================
+         BINARY CALCULATOR CSS
+    ========================================== -->
+
+    <link rel="stylesheet" href="../css/binary.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <div id="header"></div>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="binary-page">
+
+
+        <!-- =====================================
+             PAGE INTRO
+        ====================================== -->
+
+        <section class="binary-intro">
+
+            <h1>
+                Binary Calculator
+            </h1>
+
+            <p>
+                Perform binary conversions,
+                arithmetic operations, bitwise
+                calculations and binary complements
+                with detailed step-by-step explanations.
+            </p>
+
+            <p>
+                Select the type of calculation you
+                want to perform and then choose the
+                specific operation.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             BINARY CALCULATOR
+        ====================================== -->
+
+
+        <section class="binary-calculator-section" id="binaryCalculator">
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Binary Calculator
+                </h2>
+
+                <p>
+                    Choose a calculation type first, then select the operation you want to perform.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================
+                 FIRST SELECT
+            ================================== -->
+
+            <div class="calculator-selector-card">
+
+                <div class="input-group">
+
+                    <label for="calculationType">
+
+                        Calculation Type
+
+                    </label>
+
+
+                    <select id="calculationType">
+
+                        <option value="">
+                            Select Calculation Type
+                        </option>
+
+                        <option value="conversion">
+                            System Conversion
+                        </option>
+
+                        <option value="arithmetic">
+                            Binary Arithmetic
+                        </option>
+
+                        <option value="bitwise">
+                            Bitwise Operations
+                        </option>
+
+                        <option value="complement">
+                            Complement
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- =================================
+                     SECOND SELECT
+                ================================== -->
+
+                <div class="input-group" id="operationSelectorGroup" style="display: none;">
+
+                    <label for="calculationOperation">
+
+                        Select Calculation
+
+                    </label>
+
+
+                    <select id="calculationOperation">
+
+                        <option value="">
+                            Select Operation
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 DYNAMIC CALCULATOR WORKSPACE
+            ================================== -->
+
+            <div id="calculatorWorkspace" class="calculator-workspace">
+
+                <div class="workspace-placeholder">
+
+                    <div class="placeholder-icon">
+                        🔢
+                    </div>
+
+                    <h3>
+                        Choose a Calculation
+                    </h3>
+
+                    <p>
+                        Select a calculation type and
+                        operation above to start.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 DYNAMIC RESULT
+            ================================== -->
+
+            <div id="resultSection" class="result-section" style="display: none;">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Calculation Result
+                    </h2>
+
+                </div>
+
+
+                <div id="calculatorResult" class="calculator-result"></div>
+
+
+                <!-- =================================
+                     SHARE RESULT
+                ================================== -->
+
+                <button type="button" id="shareBinaryResult" class="share-btn" style="display: none;">
+                    📤 Share Result
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================
+                 DYNAMIC EXPLANATION
+            ================================== -->
+
+            <div id="calculationExplanation" class="calculation-explanation" style="display: none;">
+
+                <div class="section-heading">
+
+                    <h2>
+                        How This Calculation Works
+                    </h2>
+
+                </div>
+
+
+                <div id="explanationContent" class="explanation-content"></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             GENERAL BINARY INFORMATION
+        ====================================== -->
+
+        <section class="binary-information" id="binaryInformation">
+
+            <div class="section-heading">
+
+                <h2>
+                    Understanding Binary Numbers
+                </h2>
+
+            </div>
+
+
+            <div class="information-grid">
+
+
+                <!-- What is Binary -->
+
+                <article class="information-card">
+
+                    <h3>
+                        What is Binary?
+                    </h3>
+
+                    <p>
+                        Binary is a base-2 number system that uses only two digits:
+                        <strong>0</strong> and <strong>1</strong>.
+                    </p>
+
+                    <p>
+                        systems use binary to represent Computers and digital electronic and process information.
+                    </p>
+
+                </article>
+
+
+
+                <!-- Binary Place Values -->
+
+                <article class="information-card">
+
+                    <h3>
+                        Binary Place Values
+                    </h3>
+
+                    <p>
+                        Each position in a binary number represents a power of 2.
+                    </p>
+
+                    <div class="formula-box">
+
+                        2⁵ &nbsp; 2⁴ &nbsp; 2³ &nbsp;
+                        2² &nbsp; 2¹ &nbsp; 2⁰
+
+                        <br>
+
+                        32 &nbsp;&nbsp; 16 &nbsp;&nbsp;
+                        8 &nbsp;&nbsp; 4 &nbsp;&nbsp;
+                        2 &nbsp;&nbsp; 1
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Number Systems -->
+
+                <article class="information-card">
+
+                    <h3>
+                        Common Number Systems
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <strong>Binary</strong> —
+                            Base 2
+                        </li>
+
+                        <li>
+                            <strong>Octal</strong> —
+                            Base 8
+                        </li>
+
+                        <li>
+                            <strong>Decimal</strong> —
+                            Base 10
+                        </li>
+
+                        <li>
+                            <strong>Hexadecimal</strong> —
+                            Base 16
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+
+                <!-- Binary Applications -->
+
+                <article class="information-card">
+
+                    <h3>
+                        Where is Binary Used?
+                    </h3>
+
+                    <p>
+                        Binary numbers are used in
+                        computer systems, programming,
+                        digital electronics, networking,
+                        data storage and many other
+                        areas of computing.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CALCULATION HISTORY
+        ====================================== -->
+
+        <section class="binary-history-section" id="binaryHistory">
+
+
+
+            <!-- =====================================
+             FAQ
+        ====================================== -->
+
+            <section class="binary-faq-section" id="binaryFAQ">
+
+                <div class="section-heading">
+
+                    <h2>
+                        ❓ Frequently Asked Questions
+                    </h2>
+
+                    <p>
+                        Common questions about binary
+                        numbers and calculations.
+                    </p>
+
+                </div>
+
+
+                <div class="faq-list">
+
+
+                    <!-- FAQ 1 -->
+
+                    <div class="faq-item">
+
+                        <button type="button" class="faq-question">
+
+                            What is a binary number?
+
+                        </button>
+
+
+                        <div class="faq-answer">
+
+                            <p>
+                                A binary number is a number
+                                represented using only 0 and 1.
+                                It is the base-2 number system.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FAQ 2 -->
+
+                    <div class="faq-item">
+
+                        <button type="button" class="faq-question">
+
+                            How do I convert binary to decimal?
+
+                        </button>
+
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Each binary digit is multiplied
+                                by the corresponding power of 2.
+                                The resulting values are then
+                                added together to obtain the
+                                decimal value.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FAQ 3 -->
+
+                    <div class="faq-item">
+
+                        <button type="button" class="faq-question">
+
+                            What is binary arithmetic?
+
+                        </button>
+
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Binary arithmetic includes
+                                addition, subtraction,
+                                multiplication and division
+                                using the base-2 number system.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FAQ 4 -->
+
+                    <div class="faq-item">
+
+                        <button type="button" class="faq-question">
+
+                            What are bitwise operations?
+
+                        </button>
+
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Bitwise operations work directly
+                                with individual binary bits.
+                                Common operations include AND,
+                                OR, XOR and NOT.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FAQ 5 -->
+
+                    <div class="faq-item">
+
+                        <button type="button" class="faq-question">
+
+                            What is 1's complement?
+
+                        </button>
+
+
+                        <div class="faq-answer">
+
+                            <p>
+                                1's complement is obtained by
+                                changing every 0 to 1 and every
+                                1 to 0.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FAQ 6 -->
+
+                    <div class="faq-item">
+
+                        <button type="button" class="faq-question">
+
+                            What is 2's complement?
+
+                        </button>
+
+
+                        <div class="faq-answer">
+
+                            <p>
+                                2's complement is calculated by
+                                taking the 1's complement of a
+                                binary number and then adding 1.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FAQ 7 -->
+
+                    <div class="faq-item">
+
+                        <button type="button" class="faq-question">
+
+                            What is the difference between
+                            binary, decimal, octal and hexadecimal?
+
+                        </button>
+
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Binary uses base 2, octal uses
+                                base 8, decimal uses base 10,
+                                and hexadecimal uses base 16.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FAQ 8 -->
+
+                    <div class="faq-item">
+
+                        <button type="button" class="faq-question">
+
+                            Can I share my calculation?
+
+                        </button>
+
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. After completing a
+                                calculation, you can use the
+                                Share Result button to share
+                                the calculation, result and
+                                relevant explanation.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+    </main>
+
+    <br><br><br><br>
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer">
+
+        Fast • Accurate • Free
+
+        <p>
+            © 2026 SmartCalc Hub. All rights reserved.
+        </p>
+
+        <br>
+
+        <a href="../about.html">About</a>
+        /
+
+        <a href="../contact.html">Contact</a>
+        /
+
+        <a href="../privacy.html">Privacy Policy</a>
+        /
+
+        <a href="../terms.html">Terms & Conditions</a>
+        /
+
+        <a href="../disclaimer.html">Disclaimer</a>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+    <!-- Main Website Script -->
+
+    <script src="../script.js"></script>
+
+    <script src="../js/header.js"></script>
+
+
+    <!-- Header Loader -->
+
+    <script src="../js/header-loader.js"></script>
+
+
+    <!-- Binary Calculator Script -->
+
+    <script src="../js/binary.js"></script>
+
+
+</body>
+
+</html>
