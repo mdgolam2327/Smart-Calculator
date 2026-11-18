@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
@@ -7,16 +7,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SmartCalc Hub - Free Online Calculators for Finance, Health & Math</title>
+    <title>SmartCalc Hub - Free High-Precision Online Calculators</title>
 
     <meta name="description"
-        content="SmartCalc Hub offers free online calculators including GST, EMI, SIP, FD, BMI, Age, Discount, and Percentage calculators.">
+        content="SmartCalc Hub offers free MD's Powered online calculators including GST, EMI, SIP, FD, BMI, Age, Discount, and Scientific calculators.">
 
     <meta name="keywords"
-        content="Calculator, Smart Calculator, Digital Calculator, fast Calculator, Online Calculator, GST Calculator, EMI Calculator, SIP Calculator, FD Calculator, BMI Calculator, Scientific Calculator, Percentage Calculator">
+        content="Calculator, Smart Calculator, Digital Calculator, Online Calculator, GST Calculator, EMI Calculator, SIP Calculator, FD Calculator, BMI Calculator, Scientific Calculator, Percentage Calculator">
 
     <meta property="og:title" content="SmartCalc Hub">
-    <meta property="og:description" content="Free Online Calculators for Everyone">
+    <meta property="og:description" content="Free MD's Powered Online Calculators for Everyone">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://smartcalc-hub.github.io/smartcalc-hub">
     <meta property="og:image" content="https://smartcalc-hub.github.io/smartcalc-hub/images/og-image.png">
@@ -32,15 +32,32 @@
 <body>
 
     <div id="header">
-
-
-        <p>Hello user</p>
+        <header class="site-header">
+            <div class="header-container">
+                <div class="header-left">
+                    <button id="menuBtn" class="menu-btn" aria-label="Open Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="logo">
+                        <span class="logo-spark">🧮</span> SmartCalc <span class="logo-ai-badge"></span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="ai-status-indicator">
+                        <span class="ai-pulse-dot"></span>
+                        <span>NEURAL ENGINE ONLINE</span>
+                    </div>
+                </div>
+            </div>
+        </header>
     </div>
 
     <div class="container">
         <div class="theme-switch">
 
-            <label class="switch">
+            <label class="switch" title="Toggle Light / Dark Mode">
 
                 <input type="checkbox" id="themeToggle" onchange="toggleDarkMode()">
 
@@ -50,33 +67,44 @@
 
         </div>
 
-        <h1>🧮 Smartcalc Hub</h1>
+        <div style="text-align: center;">
+            <div class="ai-hero-badge">
+                <span class="ai-pulse-orb"></span>
+                <span>✦ POWERED BY MD GOLAM SUBHANI ✦</span>
+            </div>
+        </div>
 
-        <p>Free Online Calculators for Everyone</p>
+        <h1><span class="logo-spark">✦</span> SmartCalc Hub</h1>
+
+        <p class="hero-subtitle">High-Precision Neural Engines • Fast • Accurate • Intelligent</p>
 
         <div class="hero">
-
-            <input type="text" id="searchInput" placeholder="🔍 Search Calculator...">
-
+            <div class="search-wrapper">
+                <span class="search-icon">⚡</span>
+                <input type="text" id="searchInput" placeholder="Search calculators, algorithms, finance engines..." autocomplete="off">
+                <span class="search-badge">Fast Filter</span>
+            </div>
         </div>
 
         <!-- Stats Section Start -->
-
         <div class="stats">
 
             <div class="stat-card">
-                <h2>10+</h2>
-                <p>Calculators</p>
+                <div class="stat-icon">⚡</div>
+                <h2>11+</h2>
+                <p>Neural Engines</p>
             </div>
 
             <div class="stat-card">
+                <div class="stat-icon">✦</div>
                 <h2>100%</h2>
-                <p>Free</p>
+                <p>Free & Unlimited</p>
             </div>
 
             <div class="stat-card">
+                <div class="stat-icon">🌐</div>
                 <h2>24/7</h2>
-                <p>Available</p>
+                <p>Neural Uptime</p>
             </div>
 
         </div>
@@ -85,26 +113,32 @@
         <div class="accordion">
 
             <button class="accordion-btn">
-                🧮 Math
-                <span>4 Calculator</span>
+                <div class="accordion-title-wrap">
+                    <span class="accordion-icon">📐</span>
+                    <span>Math & Scientific</span>
+                </div>
+                <div class="accordion-meta">
+                    <span class="badge-count">4 Engines</span>
+                    <span class="accordion-chevron">▼</span>
+                </div>
             </button>
 
             <div class="accordion-content">
 
                 <a href="calculators/scientific.html">
-                    <button>Scientific Calculator</button>
+                    <button><span>Scientific Calculator</span><span class="calc-arrow">→</span></button>
                 </a>
 
                 <a href="calculators/percentage.html">
-                    <button>Percentage Calculator</button>
+                    <button><span>Percentage Calculator</span><span class="calc-arrow">→</span></button>
                 </a>
 
                 <a href="calculators/area.html">
-                    <button>Area Calculator</button>
+                    <button><span>Area Calculator</span><span class="calc-arrow">→</span></button>
                 </a>
 
                 <a href="calculators/binary.html">
-                    <button>Binary Calculator</button>
+                    <button><span>Binary Calculator</span><span class="calc-arrow">→</span></button>
                 </a>
 
             </div>
@@ -115,18 +149,24 @@
         <div class="accordion">
 
             <button class="accordion-btn">
-                🏥 Health & Fitness
-                <span>1 Calculators</span>
+                <div class="accordion-title-wrap">
+                    <span class="accordion-icon">🏥</span>
+                    <span>Health & Biometrics</span>
+                </div>
+                <div class="accordion-meta">
+                    <span class="badge-count">2 Engines</span>
+                    <span class="accordion-chevron">▼</span>
+                </div>
             </button>
 
             <div class="accordion-content">
 
-                <!-- <a href="calculators/age.html">
-                    <button>Age Calculator</button>
-                </a> -->
+                <a href="calculators/age.html">
+                    <button><span>Age Calculator</span><span class="calc-arrow">→</span></button>
+                </a>
 
                 <a href="calculators/bmi.html">
-                    <button>BMI Calculator</button>
+                    <button><span>BMI Calculator</span><span class="calc-arrow">→</span></button>
                 </a>
 
             </div>
@@ -137,26 +177,32 @@
         <div class="accordion">
 
             <button class="accordion-btn">
-                💰 Finance & Tax
-                <span>4 Calculators</span>
+                <div class="accordion-title-wrap">
+                    <span class="accordion-icon">💰</span>
+                    <span>Finance & Investment</span>
+                </div>
+                <div class="accordion-meta">
+                    <span class="badge-count">4 Engines</span>
+                    <span class="accordion-chevron">▼</span>
+                </div>
             </button>
 
             <div class="accordion-content">
 
                 <a href="calculators/gst.html">
-                    <button>GST Calculator</button>
+                    <button><span>GST Calculator</span><span class="calc-arrow">→</span></button>
                 </a>
 
                 <a href="calculators/emi.html">
-                    <button>EMI Calculator</button>
+                    <button><span>EMI Calculator</span><span class="calc-arrow">→</span></button>
                 </a>
 
                 <a href="calculators/sip.html">
-                    <button>SIP Calculator</button>
+                    <button><span>SIP Calculator</span><span class="calc-arrow">→</span></button>
                 </a>
 
                 <a href="calculators/fd.html">
-                    <button>FD Calculator</button>
+                    <button><span>FD Calculator</span><span class="calc-arrow">→</span></button>
                 </a>
 
             </div>
@@ -167,18 +213,24 @@
         <div class="accordion">
 
             <button class="accordion-btn">
-                🛒 Shopping
-                <span>2 Calculators</span>
+                <div class="accordion-title-wrap">
+                    <span class="accordion-icon">🛒</span>
+                    <span>Commercial & Shopping</span>
+                </div>
+                <div class="accordion-meta">
+                    <span class="badge-count">2 Engines</span>
+                    <span class="accordion-chevron">▼</span>
+                </div>
             </button>
 
             <div class="accordion-content">
 
                 <a href="calculators/gst.html">
-                    <button>GST Calculator</button>
+                    <button><span>GST Calculator</span><span class="calc-arrow">→</span></button>
                 </a>
 
                 <a href="calculators/discount.html">
-                    <button>Discount Calculator</button>
+                    <button><span>Discount Calculator</span><span class="calc-arrow">→</span></button>
                 </a>
 
             </div>
@@ -188,58 +240,46 @@
         <div class="history-box">
 
             <h3>
-                📜 Calculation History
+                📜 Calculation History Telemetry
             </h3>
+            <p style="font-size: 13.5px; margin-bottom: 12px; color: var(--text-muted);">
+                Audit previous computational sessions and saved results
+            </p>
 
             <a href="history.html">
                 <button class="calc-btn">
-                    View History
+                    View History Logs
                 </button>
             </a>
 
         </div>
 
-        <br><br><br><br>
+        <footer>
+            <div class="footer-system-status">
+                <span class="pulse-dot"></span>
+                <span>All Computational Nodes Operational</span>
+            </div>
 
-        <div>
+            <div>
+                © 2026 SmartCalc Hub • Fast • Accurate • Free
+            </div>
 
-            <footer>
-
-                © 2026 SmartCalc Hub
-
-                <br>
-
-                Fast • Accurate • Free
-
-                <br><br>
-
-                <a href="about.html">About</a>
-                /
-
-                <a href="contact.html">Contact</a>
-                /
-
-                <a href="privacy.html">Privacy Policy</a>
-                /
-
-                <a href="terms.html">Terms & Conditions</a>
-                /
-
+            <div style="margin-top: 14px;">
+                <a href="about.html">About</a> /
+                <a href="contact.html">Contact</a> /
+                <a href="privacy.html">Privacy Policy</a> /
+                <a href="terms.html">Terms & Conditions</a> /
                 <a href="disclaimer.html">Disclaimer</a>
+            </div>
+        </footer>
 
-            </footer>
+    </div>
 
-        </div>
+    <div id="toast" class="toast">✅ Result Copied Successfully</div>
 
-        <div id="toast" class="toast">✅ Result Copied Successfully</div>
-
-        <script src="script.js"></script>
-
-        <script src="js/header.js"></script>
-
-        <script src="js/header-loader.js"></script>
-
-
+    <script src="script.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/header-loader.js"></script>
 
 </body>
 
