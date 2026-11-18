@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse Unicode characters and see their UTF-16 code units and bytes in either byte order with this interactive character chart.">
+    <title>UTF-16 Character Chart | SmartCalc Hub</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <style>
+        .utf16-page {
+            width: min(1100px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 32px 0 64px;
+            color: #172033;
+        }
+
+        .utf16-page h1,
+        .utf16-page h2,
+        .utf16-page p {
+            background: none;
+            color: inherit;
+            -webkit-text-fill-color: currentColor;
+        }
+
+        .utf16-intro,
+        .encoding-section,
+        .character-section {
+            margin-bottom: 32px;
+            padding: 24px;
+            border: 1px solid #e1e7f0;
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: 0 4px 18px rgba(20, 40, 80, 0.06);
+        }
+
+        .utf16-intro {
+            text-align: center;
+        }
+
+        .utf16-intro h1 {
+            margin: 0 0 12px;
+            color: #092d66;
+            font-size: clamp(2rem, 5vw, 2.7rem);
+        }
+
+        .utf16-page p {
+            line-height: 1.65;
+        }
+
+        .utf16-intro p {
+            max-width: 760px;
+            margin: 0 auto;
+            color: #536176;
+        }
+
+        .utf16-page h2 {
+            margin: 0 0 16px;
+            color: #092d66;
+            font-size: 1.45rem;
+        }
+
+        .encoding-table-wrap,
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        .encoding-table,
+        .character-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .encoding-table th,
+        .encoding-table td,
+        .character-table th,
+        .character-table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #e6ebf2;
+        }
+
+        .encoding-table th,
+        .character-table th {
+            background: #f3f6fb;
+            color: #203b66;
+            font-weight: 700;
+        }
+
+        .encoding-table td:last-child,
+        .character-table td:not(:first-child) {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            white-space: nowrap;
+        }
+
+        .encoding-table code {
+            color: #263d66;
+        }
+
+        .range-form {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: end;
+            gap: 14px;
+            margin: 0 0 16px;
+        }
+
+        .range-field {
+            display: grid;
+            gap: 6px;
+        }
+
+        .range-field label {
+            color: #36445a;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .range-field input,
+        .range-field select {
+            min-width: 150px;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background: #fff;
+            color: #172033;
+            font: inherit;
+        }
+
+        .range-field input:focus,
+        .range-field select:focus,
+        .range-form button:focus-visible {
+            outline: 3px solid rgba(37, 99, 235, 0.25);
+            outline-offset: 2px;
+        }
+
+        .range-form button {
+            padding: 11px 18px;
+            border: 0;
+            border-radius: 8px;
+            background: #123d7a;
+            color: #fff;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 700;
+        }
+
+        .range-form button:hover {
+            background: #0a2d60;
+        }
+
+        .chart-help,
+        .chart-status {
+            margin: 0 0 14px;
+            color: #536176;
+            font-size: 0.92rem;
+        }
+
+        .chart-status[data-error="true"] {
+            color: #b42318;
+            font-weight: 700;
+        }
+
+        .character-table td:first-child {
+            min-width: 75px;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .character-table td:first-child code {
+            color: #68758a;
+            font-size: 0.78rem;
+            font-weight: 400;
+        }
+
+        @media (max-width: 600px) {
+            .utf16-page {
+                width: min(100% - 20px, 1100px);
+                padding-top: 20px;
+            }
+
+            .utf16-intro,
+            .encoding-section,
+            .character-section {
+                padding: 18px 14px;
+            }
+
+            .encoding-table th,
+            .encoding-table td,
+            .character-table th,
+            .character-table td {
+                padding: 10px 8px;
+                font-size: 0.86rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    
+    <main class="utf16-page">
+        <section class="utf16-intro">
+            <h1>UTF-16 Character Chart</h1>
+            <p>Explore Unicode code points and see their UTF-16 code units and bytes. UTF-16 stores most characters in one 16-bit code unit; characters outside the Basic Multilingual Plane use a surrogate pair.</p>
+        </section>
+
+        <section class="encoding-section" aria-labelledby="encoding-heading">
+            <h2 id="encoding-heading">UTF-16 encoding patterns</h2>
+            <div class="encoding-table-wrap">
+                <table class="encoding-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Unicode code point range</th>
+                            <th scope="col">Code unit(s)</th>
+                            <th scope="col">UTF-16 bytes (big-endian)</th>
+                            <th scope="col">Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>U+0000–U+D7FF</td>
+                            <td>One code unit</td>
+                            <td><code>XXXX</code></td>
+                            <td><code>A → 00 41</code></td>
+                        </tr>
+                        <tr>
+                            <td>U+E000–U+FFFF</td>
+                            <td>One code unit</td>
+                            <td><code>XXXX</code></td>
+                            <td><code>€ → 20 AC</code></td>
+                        </tr>
+                        <tr>
+                            <td>U+10000–U+10FFFF</td>
+                            <td>High + low surrogate</td>
+                            <td><code>HHHH LLLL</code></td>
+                            <td><code>😀 → D8 3D DE 00</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="margin-top: 14px; color: #536176;">Byte order controls how each 16-bit code unit is written; it does not change the code point or the order of the surrogate pair. A byte-order mark (BOM) is an optional stream marker, not part of a character's encoding.</p>
+        </section>
+
+        <section class="character-section" aria-labelledby="character-heading">
+            <h2 id="character-heading">Character lookup</h2>
+            <p class="chart-help">Enter an inclusive Unicode code point range in hexadecimal (for example, 20 to 7E). Display up to 256 code points at a time.</p>
+            <form class="range-form" id="range-form">
+                <div class="range-field">
+                    <label for="range-start">From (hex)</label>
+                    <input id="range-start" name="start" type="text" inputmode="text" value="20" autocomplete="off">
+                </div>
+                <div class="range-field">
+                    <label for="range-end">To (hex)</label>
+                    <input id="range-end" name="end" type="text" inputmode="text" value="7E" autocomplete="off">
+                </div>
+                <div class="range-field">
+                    <label for="byte-order">Byte order</label>
+                    <select id="byte-order" name="byte-order">
+                        <option value="big">Big-endian</option>
+                        <option value="little">Little-endian</option>
+                    </select>
+                </div>
+                <button type="submit">Show chart</button>
+            </form>
+            <p class="chart-status" id="chart-status" role="status" aria-live="polite"></p>
+            <div class="table-wrap">
+                <table class="character-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Character</th>
+                            <th scope="col">Code point</th>
+                            <th scope="col">Decimal</th>
+                            <th scope="col">UTF-16 code unit(s)</th>
+                            <th scope="col">Bytes (hex)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="character-rows"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer>
+        © 2026 SmartCalc Hub
+        <br>
+        Fast • Accurate • Free
+        <br><br>
+        <a href="../about.html">About</a>
+        /
+        <a href="../contact.html">Contact</a>
+        /
+        <a href="../privacy.html">Privacy Policy</a>
+        /
+        <a href="../terms.html">Terms &amp; Conditions</a>
+        /
+        <a href="../disclaimer.html">Disclaimer</a>
+    </footer>
+    <script>
+        const rangeForm = document.getElementById("range-form");
+        const startInput = document.getElementById("range-start");
+        const endInput = document.getElementById("range-end");
+        const byteOrderInput = document.getElementById("byte-order");
+        const status = document.getElementById("chart-status");
+        const rows = document.getElementById("character-rows");
+        const controlNames = [
+            "NUL", "SOH", "STX", "ETX", "EOT", "ENQ", "ACK", "BEL",
+            "BS", "TAB", "LF", "VT", "FF", "CR", "SO", "SI",
+            "DLE", "DC1", "DC2", "DC3", "DC4", "NAK", "SYN", "ETB",
+            "CAN", "EM", "SUB", "ESC", "FS", "GS", "RS", "US"
+        ];
+
+        function parseCodePoint(value) {
+            const normalized = value.trim().replace(/^U\+/i, "");
+            if (!/^[\da-f]{1,6}$/i.test(normalized)) {
+                return null;
+            }
+
+            const codePoint = Number.parseInt(normalized, 16);
+            return codePoint <= 0x10ffff ? codePoint : null;
+        }
+
+        function formatCharacter(codePoint) {
+            if (codePoint < 0x20) {
+                return controlNames[codePoint];
+            }
+            if (codePoint === 0x20) {
+                return "SPACE";
+            }
+            if (codePoint === 0x7f) {
+                return "DEL";
+            }
+            return String.fromCodePoint(codePoint);
+        }
+
+        function getCodeUnits(codePoint) {
+            if (codePoint <= 0xffff) {
+                return [codePoint];
+            }
+
+            const scalar = codePoint - 0x10000;
+            return [
+                0xd800 + (scalar >> 10),
+                0xdc00 + (scalar & 0x3ff)
+            ];
+        }
+
+        function formatCodeUnit(unit) {
+            return unit.toString(16).toUpperCase().padStart(4, "0");
+        }
+
+        function formatBytes(codeUnits, byteOrder) {
+            return codeUnits.flatMap(unit => {
+                const highByte = (unit >> 8).toString(16).toUpperCase().padStart(2, "0");
+                const lowByte = (unit & 0xff).toString(16).toUpperCase().padStart(2, "0");
+                return byteOrder === "little" ? [lowByte, highByte] : [highByte, lowByte];
+            }).join(" ");
+        }
+
+        function appendCell(row, value) {
+            const cell = document.createElement("td");
+            cell.textContent = value;
+            row.append(cell);
+        }
+
+        function renderChart(event) {
+            event?.preventDefault();
+            const start = parseCodePoint(startInput.value);
+            const end = parseCodePoint(endInput.value);
+            rows.replaceChildren();
+
+            if (start === null || end === null) {
+                status.textContent = "Enter valid hexadecimal code points from 0 to 10FFFF.";
+                status.dataset.error = "true";
+                return;
+            }
+            if (start > end) {
+                status.textContent = "The starting code point must not be greater than the ending code point.";
+                status.dataset.error = "true";
+                return;
+            }
+            if (end - start + 1 > 256) {
+                status.textContent = "Choose a range of 256 code points or fewer.";
+                status.dataset.error = "true";
+                return;
+            }
+
+            let count = 0;
+            for (let codePoint = start; codePoint <= end; codePoint += 1) {
+                if (codePoint >= 0xd800 && codePoint <= 0xdfff) {
+                    continue;
+                }
+
+                const codeUnits = getCodeUnits(codePoint);
+                const row = document.createElement("tr");
+                const characterCell = document.createElement("td");
+                characterCell.textContent = formatCharacter(codePoint);
+                row.append(characterCell);
+
+                const codePointCell = document.createElement("td");
+                const codePointLabel = document.createElement("code");
+                codePointLabel.textContent = `U+${codePoint.toString(16).toUpperCase().padStart(4, "0")}`;
+                codePointCell.append(codePointLabel);
+                row.append(codePointCell);
+
+                appendCell(row, String(codePoint));
+                appendCell(row, codeUnits.map(formatCodeUnit).join(" "));
+                appendCell(row, formatBytes(codeUnits, byteOrderInput.value));
+                rows.append(row);
+                count += 1;
+            }
+
+            status.textContent = `${count} character${count === 1 ? "" : "s"} shown. Surrogate code points are not valid Unicode scalar values and are omitted.`;
+            delete status.dataset.error;
+        }
+
+        rangeForm.addEventListener("submit", renderChart);
+        byteOrderInput.addEventListener("change", renderChart);
+        renderChart();
+    </script>
+    <script src="../js/header.js"></script>
+    <script src="../js/header-loader.js"></script>
+</body>
+</html>

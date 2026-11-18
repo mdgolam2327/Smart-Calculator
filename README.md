@@ -1,11 +1,11 @@
-# 🧮 Smart Calculator
+# 🧮 SmartCalc Hub
 
 A simple, responsive, and user-friendly calculator website built with
 **HTML, CSS, and JavaScript**.
 
-The project contains multiple useful calculators along with supporting
-pages such as About, Contact, Privacy Policy, Disclaimer, Terms &
-Conditions, and a custom 404 page.
+The project contains 13 calculators, including area and binary
+calculators and interactive UTF-8 and UTF-16 character charts, along
+with supporting information pages.
 
 ## ✨ Features
 
@@ -14,6 +14,8 @@ Conditions, and a custom 404 page.
 -   ⚡ Lightweight and fast
 -   🎨 Separate styling for individual calculators
 -   🔢 Age Calculator
+-   📐 Area Calculator for common geometric shapes
+-   🔣 Binary Calculator for conversions, arithmetic, and bitwise operations
 -   ⚖️ BMI Calculator
 -   💰 Discount Calculator
 -   🏦 EMI Calculator
@@ -22,6 +24,8 @@ Conditions, and a custom 404 page.
 -   📊 Percentage Calculator
 -   🔬 Scientific Calculator
 -   📈 SIP Calculator
+-   🔤 Interactive UTF-8 character chart with code point lookup
+-   🔡 Interactive UTF-16 character chart with code unit and byte-order lookup
 -   📜 Calculation history page
 -   🔒 Privacy Policy page
 -   📄 Terms & Conditions page
@@ -48,6 +52,8 @@ Smart-Calculator/
 │
 ├── calculators/
 │   ├── age.html
+│   ├── area.html
+│   ├── binary.html
 │   ├── bmi.html
 │   ├── discount.html
 │   ├── emi.html
@@ -55,13 +61,17 @@ Smart-Calculator/
 │   ├── gst.html
 │   ├── percentage.html
 │   ├── scientific.html
-│   └── sip.html
+│   ├── sip.html
+│   ├── utf_8.html
+│   └── utf_16.html
 │
 ├── components/
 │   └── header.html
 │
 ├── css/
 │   ├── age.css
+│   ├── area.css
+│   ├── binary.css
 │   ├── bmi.css
 │   ├── discount.css
 │   ├── emi.css
@@ -77,6 +87,8 @@ Smart-Calculator/
 │
 ├── js/
 │   ├── age.js
+│   ├── area.js
+│   ├── binary.js
 │   ├── bmi.js
 │   ├── discount.js
 │   ├── emi.js
@@ -105,17 +117,21 @@ Smart-Calculator/
 
 ## 🧮 Available Calculators
 
-  Calculator              Description
-  ----------------------- --------------------------------------------
-  Age Calculator          Calculate age based on date of birth
-  BMI Calculator          Calculate Body Mass Index
-  Discount Calculator     Calculate discounts and final prices
-  EMI Calculator          Calculate loan EMI and related values
-  FD Calculator           Calculate Fixed Deposit returns
-  GST Calculator          Calculate GST amounts
-  Percentage Calculator   Perform common percentage calculations
-  Scientific Calculator   Perform advanced mathematical calculations
-  SIP Calculator          Estimate SIP investment returns
+| Calculator | Description |
+| --- | --- |
+| Age Calculator | Calculate age based on date of birth |
+| Area Calculator | Calculate areas of geometric shapes |
+| Binary Calculator | Convert binary numbers and perform arithmetic and bitwise operations |
+| BMI Calculator | Calculate Body Mass Index |
+| Discount Calculator | Calculate discounts and final prices |
+| EMI Calculator | Calculate loan EMI and related values |
+| FD Calculator | Calculate Fixed Deposit returns |
+| GST Calculator | Calculate GST amounts |
+| Percentage Calculator | Perform common percentage calculations |
+| Scientific Calculator | Perform advanced mathematical calculations |
+| SIP Calculator | Estimate SIP investment returns |
+| UTF-8 Character Chart | Browse Unicode characters and their UTF-8 byte encodings |
+| UTF-16 Character Chart | Browse Unicode characters and their UTF-16 code units and bytes |
 
 ## 🚀 Getting Started
 
@@ -165,7 +181,8 @@ The project also includes:
 
 ## 📌 Project Status
 
-**Completed ✅**
+**Active development 🚧** — The site currently includes 13 calculator
+pages and its supporting pages. Features and pages may continue to evolve.
 
 ------------------------------------------------------------------------
 
